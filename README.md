@@ -56,22 +56,30 @@ repositories are declarative interfaces whose implementations Spring generates.
 | Persistence    | Spring Data JPA + PostgreSQL                        |
 | Auth           | Spring Security (bcrypt) + JWT (`jjwt`)             |
 | Email          | Spring Mail (SMTP)                                  |
+| Frontend       | React 18 + TypeScript + Vite                        |
+| Browser RPC    | Connect-ES (gRPC-Web) via Envoy proxy on `:8081`   |
 | DB admin       | Adminer (Docker, localhost-only)                   |
-| Build          | Maven (protobuf compiled during build)             |
+| Build          | Maven (backend) · buf + Vite (frontend)            |
 
 ## Project layout
 
+Monorepo: one shared `proto/` contract, both sides generate from it.
+
 ```
-proto/brain_cache.proto              # gRPC contract (source of truth)
-data/dsa/{hard,medium,easy}.csv      # one-time DSA dataset, sorted by #companies
-src/main/java/com/braincache/
-├── config/       # typed @ConfigurationProperties + bean wiring
-├── domain/       # JPA entities (User, Card, CardType)
-├── repository/   # Spring Data interfaces
-├── security/     # JWT service + gRPC auth interceptor
-├── service/      # business logic (Auth, Card, Email, DsaCatalog, DsaRecommendation)
-├── scheduler/    # DailyReviewJob + RecommendationJob crons
-└── grpc/         # gRPC transport adapters
+proto/brain_cache.proto              # gRPC contract (source of truth for both sides)
+docker-compose.yml                   # postgres + adminer (later: envoy/nginx)
+backend/                             # Spring Boot gRPC service
+├── pom.xml                          # protoSourceRoot -> ../proto
+├── data/dsa/{hard,medium,easy}.csv  # one-time DSA dataset, sorted by #companies
+└── src/main/java/com/braincache/
+    ├── config/       # typed @ConfigurationProperties + bean wiring
+    ├── domain/       # JPA entities (User, Card, CardType)
+    ├── repository/   # Spring Data interfaces
+    ├── security/     # JWT service + gRPC auth interceptor
+    ├── service/      # business logic (Auth, Card, Email, DsaCatalog, DsaRecommendation)
+    ├── scheduler/    # DailyReviewJob + RecommendationJob crons
+    └── grpc/         # gRPC transport adapters
+frontend/                            # React + Connect (gRPC-Web) client
 ```
 
 ## Getting started
@@ -94,24 +102,43 @@ Fill in `.env`:
 - `SMTP_USERNAME` / `SMTP_PASSWORD` — for Gmail, create an **app password**
   (not your account password). Leave blank to run without email.
 
-### 2. Start Postgres (+ Adminer)
+### 2. Start Postgres + Adminer + Envoy
 
 ```bash
 docker compose up -d
 ```
 
-Adminer UI: <http://localhost:8080> — System `PostgreSQL`, Server `postgres`, then
-your `.env` credentials. It's bound to `127.0.0.1` only; on a server reach it via an
-SSH tunnel (`ssh -L 8080:localhost:8080 …`), never by opening the port publicly.
+- Postgres on `:5432`.
+- Adminer UI on <http://localhost:8080> — System `PostgreSQL`, Server `postgres`, then
+  your `.env` credentials. Bound to `127.0.0.1` only; on a server reach it via an SSH
+  tunnel (`ssh -L 8080:localhost:8080 …`), never by opening the port publicly.
+- Envoy on `:8081` — gRPC-Web proxy the browser talks to; forwards to the backend's
+  native gRPC on `:9090`.
 
 ### 3. Run the backend
 
 ```bash
-set -a && source .env && set +a   # export vars into the shell
+cd backend
+set -a && source ../.env && set +a   # export root .env into the shell
 mvn spring-boot:run
 ```
 
-The gRPC server comes up on `localhost:9090`.
+The gRPC server comes up on `localhost:9090`. (Run from `backend/` so the default
+`RECOMMENDATION_DATA_DIR=data/dsa` resolves to `backend/data/dsa`.)
+
+### 4. Run the frontend
+
+```bash
+cd frontend
+npm install
+npm run generate    # codegen the TS client from ../proto (also runs on first setup)
+npm run dev
+```
+
+Vite serves on <http://localhost:5173>. It calls the backend through Envoy
+(`VITE_API_BASE`, default `http://localhost:8081`). Register/log in, then add cards and
+review what's due. Generated client code lives in `frontend/src/gen/` (gitignored — run
+`npm run generate` after changing the proto).
 
 ### Try it
 
@@ -165,7 +192,7 @@ All values are environment variables with sensible local defaults.
 
 ## DSA dataset
 
-`data/dsa/{hard,medium,easy}.csv` is a one-time static export (snapshot May 2026) of
+`backend/data/dsa/{hard,medium,easy}.csv` is a one-time static export (snapshot May 2026) of
 company-wise LeetCode questions, sourced from a public repository that scraped LeetCode
 Premium's company question lists. Problems are deduplicated and sorted by how many
 companies ask each. The recommender walks each list top-down, skipping problems already

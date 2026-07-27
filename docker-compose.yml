@@ -38,5 +38,19 @@ services:
       ADMINER_DEFAULT_SERVER: postgres
     restart: unless-stopped
 
+  # gRPC-Web proxy for the React frontend. Terminates gRPC-Web on :8081 and forwards
+  # native gRPC to the backend running on the host (mvn) at :9090.
+  envoy:
+    image: envoyproxy/envoy:v1.31-latest
+    container_name: braincache-envoy
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./envoy/envoy.yaml:/etc/envoy/envoy.yaml:ro
+    # Lets the container resolve host.docker.internal on Linux/EC2 (already works on macOS).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
 volumes:
   pgdata:

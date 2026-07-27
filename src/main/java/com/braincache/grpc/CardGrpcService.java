@@ -5,6 +5,7 @@ import com.braincache.grpc.proto.CardServiceGrpc;
 import com.braincache.grpc.proto.CreateCardRequest;
 import com.braincache.grpc.proto.ListDueCardsRequest;
 import com.braincache.grpc.proto.ListDueCardsResponse;
+import com.braincache.grpc.proto.MarkDsaProblemDoneRequest;
 import com.braincache.grpc.proto.ReviewCardRequest;
 import com.braincache.security.GrpcSecurity;
 import com.braincache.service.CardService;
@@ -56,6 +57,12 @@ public class CardGrpcService extends CardServiceGrpc.CardServiceImplBase {
                 toProto(cardService.review(email, request.getCardId(), request.getPassed())));
     }
 
+    @Override
+    public void markDsaProblemDone(MarkDsaProblemDoneRequest request, StreamObserver<Card> observer) {
+        guarded(observer, email ->
+                toProto(cardService.markDsaDone(email, request.getUrl(), request.getComment())));
+    }
+
     // Shared plumbing for the single-Card responses: resolve identity, run the action,
     // emit, or convert failures to gRPC Status. Mirrors AuthGrpcService.handle().
     private void guarded(StreamObserver<Card> observer, java.util.function.Function<String, Card> action) {
@@ -73,12 +80,16 @@ public class CardGrpcService extends CardServiceGrpc.CardServiceImplBase {
     }
 
     private Card toProto(com.braincache.domain.Card c) {
+        // proto strings can't be null; coalesce the DSA-only fields to "".
         return Card.newBuilder()
                 .setId(c.getId())
                 .setFront(c.getFront())
                 .setBack(c.getBack())
                 .setIntervalIndex(c.getIntervalIndex())
                 .setNextReview(c.getNextReview().toString())
+                .setType(c.getType().name())
+                .setUrl(c.getUrl() == null ? "" : c.getUrl())
+                .setComment(c.getComment() == null ? "" : c.getComment())
                 .build();
     }
 }

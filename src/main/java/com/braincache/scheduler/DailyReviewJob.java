@@ -62,7 +62,7 @@ public class DailyReviewJob {
     }
 
     private String subject(int count) {
-        return "Brain Cache — " + count + " card" + (count == 1 ? "" : "s") + " to review";
+        return "Brain-Cache: Revision — " + count + " card" + (count == 1 ? "" : "s") + " due";
     }
 
     private String body(List<Card> userCards) {

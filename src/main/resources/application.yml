@@ -50,3 +50,15 @@ braincache:
     email-cron: ${REVIEW_EMAIL_CRON:0 0 7 * * *}
     # From-address on the daily review email.
     email-from: ${REVIEW_EMAIL_FROM:brain-cache@localhost}
+  recommendation:
+    # Daily DSA problem recommendation email ("Brain-Cache: Recommendation"). Separate
+    # cron from Revision (07:00). Default: daily 08:00.
+    cron: ${RECOMMENDATION_CRON:0 0 8 * * *}
+    # Directory holding the DSA CSVs (hard.csv/medium.csv/easy.csv) exported once.
+    data-dir: ${RECOMMENDATION_DATA_DIR:data/dsa}
+    # 7 slots Mon..Sun = how many problems of that difficulty to recommend that weekday.
+    # 0 (or a short array) means none of that difficulty that day. Top-unseen picked by
+    # NumCompanies (most-asked first). Default: 1 hard every day, no medium/easy.
+    hard:   ${RECOMMENDATION_HARD:1,1,1,1,1,1,1}
+    medium: ${RECOMMENDATION_MEDIUM:0,0,0,0,0,0,0}
+    easy:   ${RECOMMENDATION_EASY:0,0,0,0,0,0,0}

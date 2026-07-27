@@ -2,6 +2,7 @@ package com.braincache.service;
 
 import com.braincache.config.ReviewProperties;
 import com.braincache.domain.Card;
+import com.braincache.service.DsaCatalog.Problem;
 import com.braincache.repository.CardRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,10 +23,12 @@ import java.util.List;
 public class CardService {
 
     private final CardRepository cards;
+    private final DsaCatalog catalog;
     private final List<Integer> intervalsDays;
 
-    public CardService(CardRepository cards, ReviewProperties review) {
+    public CardService(CardRepository cards, DsaCatalog catalog, ReviewProperties review) {
         this.cards = cards;
+        this.catalog = catalog;
         this.intervalsDays = review.intervalsDays();
     }
 
@@ -33,6 +36,22 @@ public class CardService {
     public Card create(String userEmail, String front, String back) {
         Instant next = Instant.now().plus(intervalsDays.get(0), ChronoUnit.DAYS);
         return cards.save(new Card(userEmail, front, back, next));
+    }
+
+    /**
+     * Mark a recommended DSA problem done. Creates a DSA card (with optional comment)
+     * at the first ladder rung, so from now on it rides the Revision stream and is
+     * never recommended again. Idempotent-ish: rejects a URL already marked done.
+     */
+    @Transactional
+    public Card markDsaDone(String userEmail, String url, String comment) {
+        Problem problem = catalog.byUrl(url)
+                .orElseThrow(() -> new IllegalArgumentException("unknown problem url"));
+        if (cards.existsByUserEmailAndUrl(userEmail, url)) {
+            throw new IllegalArgumentException("problem already marked done");
+        }
+        Instant next = Instant.now().plus(intervalsDays.get(0), ChronoUnit.DAYS);
+        return cards.save(Card.dsa(userEmail, problem.title(), url, comment, next));
     }
 
     @Transactional(readOnly = true)

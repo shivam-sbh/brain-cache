@@ -18,5 +18,25 @@ services:
       timeout: 5s
       retries: 5
 
+  # Web UI to view/edit Postgres tables. Single tiny container — fine on a t2.micro.
+  #
+  # SECURITY: bound to 127.0.0.1 only, so it is NOT reachable from the public internet.
+  #   - Local:  open http://localhost:8080
+  #   - Prod (EC2): DO NOT open port 8080 in the security group. Reach it over an SSH
+  #                 tunnel instead:  ssh -L 8080:localhost:8080 ec2-user@<host>
+  #                 then browse http://localhost:8080 on your machine.
+  # Login screen fields: System=PostgreSQL, Server=postgres, User/Password/DB from .env.
+  adminer:
+    image: adminer:4
+    container_name: braincache-adminer
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+    restart: unless-stopped
+
 volumes:
   pgdata:

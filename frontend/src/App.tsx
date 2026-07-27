@@ -27,7 +27,8 @@ import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
-import { authClient, cardClient, getToken, setToken, clearToken } from "./client";
+import DoneAllRoundedIcon from "@mui/icons-material/DoneAllRounded";
+import { authClient, cardClient, getToken, setToken, getEmail, setEmail, clearSession } from "./client";
 import type { Card as CardMsg } from "./gen/brain_cache_pb";
 
 function Wordmark({ size = 22 }: { size?: number }) {
@@ -48,13 +49,14 @@ function Wordmark({ size = 22 }: { size?: number }) {
 
 export function App() {
   const [token, setTok] = useState<string | null>(getToken());
-  const [email, setEmailState] = useState<string | null>(null);
+  const [email, setEmailState] = useState<string | null>(getEmail());
 
   if (!token) {
     return (
       <Auth
         onAuthed={(t, e) => {
           setToken(t);
+          setEmail(e);
           setTok(t);
           setEmailState(e);
         }}
@@ -65,8 +67,9 @@ export function App() {
     <Dashboard
       email={email}
       onLogout={() => {
-        clearToken();
+        clearSession();
         setTok(null);
+        setEmailState(null);
       }}
     />
   );
@@ -102,8 +105,7 @@ function Auth({ onAuthed }: { onAuthed: (token: string, email: string) => void }
     e.preventDefault();
     setBusy(true);
     try {
-      const call = mode === "login" ? authClient.login : authClient.register;
-      const res = await call({ email, password });
+      const res = await authClient[mode]({ email, password });
       onAuthed(res.token, res.email);
     } catch (err) {
       capture(err);
@@ -129,7 +131,6 @@ function Auth({ onAuthed }: { onAuthed: (token: string, email: string) => void }
           maxWidth: 420,
           p: { xs: 3, sm: 5 },
           border: "1px solid #dadce0",
-          borderRadius: 4,
         }}
       >
         <Stack spacing={1} alignItems="center" mb={3}>
@@ -186,6 +187,9 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
   const [loading, setLoading] = useState(true);
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
+  const [dsaUrl, setDsaUrl] = useState("");
+  const [dsaComment, setDsaComment] = useState("");
+  const [notice, setNotice] = useState<string | null>(null);
   const { capture, node } = useErr();
 
   const load = useCallback(async () => {
@@ -222,6 +226,21 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
     try {
       await cardClient.reviewCard({ cardId: card.id, passed });
       setCards((cs) => cs.filter((c) => c.id !== card.id));
+    } catch (err) {
+      capture(err);
+    }
+  };
+
+  // Tick off a problem from the recommendation email: it graduates into the
+  // revision ladder and is never recommended again.
+  const markDsaDone = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!dsaUrl.trim()) return;
+    try {
+      await cardClient.markDsaProblemDone({ url: dsaUrl.trim(), comment: dsaComment.trim() });
+      setDsaUrl("");
+      setDsaComment("");
+      setNotice("Marked done — added to your revision ladder.");
     } catch (err) {
       capture(err);
     }
@@ -274,6 +293,39 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
               <Box>
                 <Button type="submit" variant="contained" startIcon={<AddRoundedIcon />}>
                   Add card
+                </Button>
+              </Box>
+            </Stack>
+          </Box>
+        </Paper>
+
+        <Paper elevation={0} sx={{ p: 3, mb: 4, border: "1px solid #dadce0" }}>
+          <Typography variant="h6" mb={0.5}>
+            Mark a DSA problem done
+          </Typography>
+          <Typography variant="body2" color="text.secondary" mb={2}>
+            Paste a LeetCode link from your recommendation email. It joins the revision ladder and stops being recommended.
+          </Typography>
+          <Box component="form" onSubmit={markDsaDone}>
+            <Stack spacing={2}>
+              <TextField
+                label="LeetCode URL"
+                type="url"
+                fullWidth
+                value={dsaUrl}
+                onChange={(e) => setDsaUrl(e.target.value)}
+              />
+              <TextField
+                label="Comment — optional"
+                fullWidth
+                multiline
+                minRows={2}
+                value={dsaComment}
+                onChange={(e) => setDsaComment(e.target.value)}
+              />
+              <Box>
+                <Button type="submit" variant="outlined" startIcon={<DoneAllRoundedIcon />}>
+                  Mark done
                 </Button>
               </Box>
             </Stack>
@@ -355,6 +407,16 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
         )}
       </Container>
       {node}
+      <Snackbar
+        open={!!notice}
+        autoHideDuration={4000}
+        onClose={() => setNotice(null)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert severity="success" variant="filled" onClose={() => setNotice(null)}>
+          {notice}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

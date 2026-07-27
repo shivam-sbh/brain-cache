@@ -11,6 +11,14 @@ option java_multiple_files = true;
 service AuthService {
   rpc Register(RegisterRequest) returns (AuthResponse);
   rpc Login(LoginRequest) returns (AuthResponse);
+  // Guarded: requires a valid JWT in "authorization: Bearer <token>" metadata.
+  rpc WhoAmI(WhoAmIRequest) returns (WhoAmIResponse);
+}
+
+message WhoAmIRequest {}
+
+message WhoAmIResponse {
+  string email = 1;
 }
 
 message RegisterRequest {

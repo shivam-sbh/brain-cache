@@ -4,6 +4,9 @@ import com.braincache.grpc.proto.AuthResponse;
 import com.braincache.grpc.proto.AuthServiceGrpc;
 import com.braincache.grpc.proto.LoginRequest;
 import com.braincache.grpc.proto.RegisterRequest;
+import com.braincache.grpc.proto.WhoAmIRequest;
+import com.braincache.grpc.proto.WhoAmIResponse;
+import com.braincache.security.GrpcSecurity;
 import com.braincache.service.AuthService;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
@@ -34,6 +37,19 @@ public class AuthGrpcService extends AuthServiceGrpc.AuthServiceImplBase {
     public void login(LoginRequest request, StreamObserver<AuthResponse> responseObserver) {
         handle(responseObserver, () ->
                 authService.login(request.getEmail(), request.getPassword()));
+    }
+
+    // Guarded RPC: identity comes from the JWT the interceptor already verified and
+    // parked in the gRPC Context. No token -> requireUserEmail() throws UNAUTHENTICATED.
+    @Override
+    public void whoAmI(WhoAmIRequest request, StreamObserver<WhoAmIResponse> responseObserver) {
+        try {
+            String email = GrpcSecurity.requireUserEmail();
+            responseObserver.onNext(WhoAmIResponse.newBuilder().setEmail(email).build());
+            responseObserver.onCompleted();
+        } catch (io.grpc.StatusRuntimeException e) {
+            responseObserver.onError(e);
+        }
     }
 
     // Shared plumbing: run the call, emit response, or convert failure to a gRPC Status.

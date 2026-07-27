@@ -1,0 +1,31 @@
+# Config. Values with ${VAR:default} bind from container env vars first, fall back
+# to the default for local dev. Spring's relaxed binding maps SPRING_DATASOURCE_PASSWORD
+# env => spring.datasource.password automatically — no explicit mapping needed.
+
+spring:
+  application:
+    name: brain-cache
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/braincache}
+    username: ${SPRING_DATASOURCE_USERNAME:braincache}
+    password: ${SPRING_DATASOURCE_PASSWORD:braincache}
+  jpa:
+    hibernate:
+      # validate = fail fast if entities don't match schema. We own schema via SQL/flyway later.
+      # For now `update` lets Hibernate create tables from entities during early dev.
+      ddl-auto: ${JPA_DDL_AUTO:update}
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+
+# net.devh gRPC server settings.
+grpc:
+  server:
+    port: 9090
+
+# App-specific config namespace (bound to a @ConfigurationProperties bean later).
+braincache:
+  jwt:
+    secret: ${JWT_SECRET:dev-only-insecure-secret-change-me-min-32-bytes-long}
+    ttl-hours: ${JWT_TTL_HOURS:168}   # 7 days

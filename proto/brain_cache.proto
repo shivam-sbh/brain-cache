@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package braincache.v1;
+
+// Generated Java lands here. multiple_files keeps one class per message/service.
+option java_package = "com.braincache.grpc.proto";
+option java_multiple_files = true;
+
+// ── Auth ──────────────────────────────────────────────────────────────
+// First vertical slice: register + login. Everything else builds on this.
+service AuthService {
+  rpc Register(RegisterRequest) returns (AuthResponse);
+  rpc Login(LoginRequest) returns (AuthResponse);
+}
+
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message AuthResponse {
+  string token = 1;      // signed JWT — client sends it back in metadata
+  string email = 2;
+}

@@ -11,15 +11,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * auto-create. Each @Bean method's return value becomes a singleton in the container,
  * injectable anywhere by type. Think of it as explicit wire.Build providers.
  *
- * @EnableConfigurationProperties turns JwtProperties into an injectable bean.
+ * @EnableConfigurationProperties turns the typed config records into injectable beans.
  */
 @Configuration
-@EnableConfigurationProperties(JwtProperties.class)
+@EnableConfigurationProperties({JwtProperties.class, ReviewProperties.class})
 public class SecurityConfig {
 
     // One bcrypt encoder for the whole app. Inject wherever we hash/verify passwords.
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+            return new BCryptPasswordEncoder();
     }
 }

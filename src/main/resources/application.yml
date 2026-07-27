@@ -18,6 +18,19 @@ spring:
       hibernate:
         format_sql: true
     show-sql: false
+  # SMTP for daily review emails. Gmail: use an app password, not your account password.
+  # Empty defaults keep the app booting locally without mail configured.
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 # net.devh gRPC server settings.
 grpc:
@@ -29,3 +42,11 @@ braincache:
   jwt:
     secret: ${JWT_SECRET:dev-only-insecure-secret-change-me-min-32-bytes-long}
     ttl-hours: ${JWT_TTL_HOURS:168}   # 7 days
+  review:
+    # Interval ladder in days. A card climbs one rung per pass, resets to the first on fail.
+    # Comma-separated env override binds into the List<Integer> via relaxed binding.
+    intervals-days: ${REVIEW_INTERVALS_DAYS:1,2,4,8,16,32,64,128}
+    # Spring cron (6 fields: sec min hour dom mon dow). Default: daily 07:00.
+    email-cron: ${REVIEW_EMAIL_CRON:0 0 7 * * *}
+    # From-address on the daily review email.
+    email-from: ${REVIEW_EMAIL_FROM:brain-cache@localhost}

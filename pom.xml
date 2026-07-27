@@ -55,6 +55,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!-- Mail: JavaMailSender bean auto-configured from spring.mail.* — sends daily review emails. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
         <!-- gRPC server auto-config: registers every @GrpcService bean, runs server on :9090. -->
         <dependency>
             <groupId>net.devh</groupId>

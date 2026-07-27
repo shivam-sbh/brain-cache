@@ -52,5 +52,17 @@ services:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped
 
+  # Local mail catcher for dev — fake SMTP on :1025, web inbox on :8025. Nothing
+  # leaves the machine. Point the backend at it with SMTP_HOST=localhost SMTP_PORT=1025
+  # SMTP_AUTH=false SMTP_STARTTLS=false. Prod uses real SES creds instead (no Mailpit).
+  # SECURITY: web UI bound to 127.0.0.1 only.
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: braincache-mailpit
+    ports:
+      - "1025:1025"
+      - "127.0.0.1:8025:8025"
+    restart: unless-stopped
+
 volumes:
   pgdata:

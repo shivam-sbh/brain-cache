@@ -28,9 +28,11 @@ spring:
     properties:
       mail:
         smtp:
-          auth: true
+          # SES/Gmail want auth+STARTTLS; a local Mailpit catcher wants neither.
+          # Override per environment via SMTP_AUTH / SMTP_STARTTLS.
+          auth: ${SMTP_AUTH:true}
           starttls:
-            enable: true
+            enable: ${SMTP_STARTTLS:true}
 
 # net.devh gRPC server settings.
 grpc:

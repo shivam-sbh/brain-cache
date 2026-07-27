@@ -43,19 +43,35 @@ service CardService {
   rpc CreateCard(CreateCardRequest) returns (Card);
   rpc ListDueCards(ListDueCardsRequest) returns (ListDueCardsResponse);
   rpc ReviewCard(ReviewCardRequest) returns (Card);
+  // Search the DSA catalog by problem name — powers the "solve a problem" picker.
+  rpc SearchDsaProblems(SearchDsaProblemsRequest) returns (SearchDsaProblemsResponse);
   // Mark a recommended DSA problem done; it becomes a DSA card on the revision ladder.
   rpc MarkDsaProblemDone(MarkDsaProblemDoneRequest) returns (Card);
+
+  // Every card the caller has ever created, newest first — for the history rail.
+  rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse);
 }
 
 message Card {
   int64 id = 1;
-  string front = 2;          // prompt / question (DSA: problem title)
-  string back = 3;           // answer (DSA: LeetCode URL)
-  int32 interval_index = 4;  // position in the config interval ladder
-  string next_review = 5;    // ISO-8601 instant when the card is next due
-  string type = 6;           // "MANUAL" or "DSA"
-  string url = 7;            // DSA only: problem URL
-  string comment = 8;        // DSA only: user note captured at mark-done
+  string front = 2;              // prompt / question (DSA: problem title)
+  string back = 3;               // answer (DSA: LeetCode URL)
+  int32 interval_index = 4;      // position in the config interval ladder
+  string next_review = 5;        // ISO-8601 instant when the card is next due
+  string type = 6;               // "MANUAL" or "DSA"
+  string url = 7;                // DSA only: problem URL
+  string comment = 8;            // DSA only: user note captured at mark-done
+  int32 num_companies = 9;       // DSA only: how many companies asked it
+  repeated string companies = 10; // DSA only: company names
+  string created_at = 11;        // ISO-8601 instant the card was created
+}
+
+// One row from the DSA catalog, surfaced to the picker.
+message DsaProblem {
+  string title = 1;
+  string url = 2;
+  int32 num_companies = 3;
+  repeated string companies = 4;
 }
 
 message CreateCardRequest {
@@ -72,6 +88,21 @@ message ListDueCardsResponse {
 message ReviewCardRequest {
   int64 card_id = 1;
   bool passed = 2;           // true -> advance ladder; false -> reset to first interval
+}
+
+message SearchDsaProblemsRequest {
+  string query = 1;          // case-insensitive substring of the problem title
+  int32 limit = 2;           // max results (server caps it)
+}
+
+message SearchDsaProblemsResponse {
+  repeated DsaProblem problems = 1;
+}
+
+message ListHistoryRequest {}
+
+message ListHistoryResponse {
+  repeated Card cards = 1;   // all of the caller's cards, newest first
 }
 
 message MarkDsaProblemDoneRequest {

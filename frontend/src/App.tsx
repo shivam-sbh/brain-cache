@@ -1,52 +1,86 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ConnectError } from "@connectrpc/connect";
 import {
-  Alert,
-  AppBar,
-  Avatar,
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Chip,
-  CircularProgress,
-  Container,
-  Divider,
-  IconButton,
-  Paper,
-  Snackbar,
-  Stack,
-  TextField,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
-import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
-import DoneAllRoundedIcon from "@mui/icons-material/DoneAllRounded";
-import { authClient, cardClient, getToken, setToken, getEmail, setEmail, clearSession } from "./client";
-import type { Card as CardMsg } from "./gen/brain_cache_pb";
+  LogOut,
+  Search,
+  Check,
+  X,
+  Plus,
+  Terminal,
+  ExternalLink,
+  Loader2,
+  ChevronRight,
+  ArrowLeft,
+  CalendarDays,
+  Clock,
+  Layers,
+  Zap,
+  CornerDownRight,
+} from "lucide-react";
+import {
+  authClient,
+  cardClient,
+  getToken,
+  setToken,
+  getEmail,
+  setEmail,
+  clearSession,
+} from "./client";
+import type { Card as CardMsg, DsaProblem } from "./gen/brain_cache_pb";
 
-function Wordmark({ size = 22 }: { size?: number }) {
+/* ── wordmark ──────────────────────────────────────────────────────────── */
+function Wordmark({ big = false }: { big?: boolean }) {
   return (
-    <Typography
-      component="span"
-      sx={{ fontFamily: '"Google Sans", sans-serif', fontWeight: 500, fontSize: size, letterSpacing: -0.5 }}
-    >
-      <span className="g-blue">B</span>
-      <span className="g-red">r</span>
-      <span className="g-yellow">a</span>
-      <span className="g-blue">i</span>
-      <span className="g-green">n</span>
-      <span style={{ color: "#5f6368" }}> Cache</span>
-    </Typography>
+    <span className={`wordmark${big ? " big" : ""}`}>
+      <span className="glyph">◈</span>
+      <span className="mark-text">
+        brain<span className="dim">cache</span>
+      </span>
+    </span>
   );
 }
 
+/* ── date helpers (local-day grouping for the history rail) ───────────────── */
+const dayKey = (iso: string) => {
+  const d = new Date(iso);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
+    d.getDate(),
+  ).padStart(2, "0")}`;
+};
+const todayKey = () => dayKey(new Date().toISOString());
+function labelForDay(key: string) {
+  const t = todayKey();
+  if (key === t) return "Today";
+  const d = new Date(key + "T00:00:00");
+  const yest = new Date();
+  yest.setDate(yest.getDate() - 1);
+  if (key === dayKey(yest.toISOString())) return "Yesterday";
+  return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
+}
+const timeOf = (iso: string) =>
+  new Date(iso).toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
+
+/* ── toast hook (error + success) ──────────────────────────────────────── */
+type Toast = { kind: "error" | "ok"; msg: string };
+function useToast() {
+  const [toast, setToast] = useState<Toast | null>(null);
+  const timer = useRef<number | undefined>(undefined);
+  const show = useCallback((t: Toast) => {
+    setToast(t);
+    window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setToast(null), 4000);
+  }, []);
+  const fail = useCallback(
+    (err: unknown) =>
+      show({ kind: "error", msg: err instanceof ConnectError ? err.rawMessage : String(err) }),
+    [show],
+  );
+  const ok = useCallback((msg: string) => show({ kind: "ok", msg }), [show]);
+  const node = toast ? <div className={`toast ${toast.kind}`}>{toast.msg}</div> : null;
+  return { fail, ok, node };
+}
+
+/* ── root gate ─────────────────────────────────────────────────────────── */
 export function App() {
   const [token, setTok] = useState<string | null>(getToken());
   const [email, setEmailState] = useState<string | null>(getEmail());
@@ -75,31 +109,13 @@ export function App() {
   );
 }
 
-function useErr() {
-  const [error, setError] = useState<string | null>(null);
-  const capture = (err: unknown) =>
-    setError(err instanceof ConnectError ? err.rawMessage : String(err));
-  const node = (
-    <Snackbar
-      open={!!error}
-      autoHideDuration={5000}
-      onClose={() => setError(null)}
-      anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-    >
-      <Alert severity="error" variant="filled" onClose={() => setError(null)}>
-        {error}
-      </Alert>
-    </Snackbar>
-  );
-  return { capture, node };
-}
-
+/* ── auth ──────────────────────────────────────────────────────────────── */
 function Auth({ onAuthed }: { onAuthed: (token: string, email: string) => void }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState<"login" | "register">("login");
   const [busy, setBusy] = useState(false);
-  const { capture, node } = useErr();
+  const { fail, node } = useToast();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -108,106 +124,102 @@ function Auth({ onAuthed }: { onAuthed: (token: string, email: string) => void }
       const res = await authClient[mode]({ email, password });
       onAuthed(res.token, res.email);
     } catch (err) {
-      capture(err);
+      fail(err);
     } finally {
       setBusy(false);
     }
   };
 
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        display: "grid",
-        placeItems: "center",
-        background: "radial-gradient(1200px 600px at 50% -10%, #e8f0fe 0%, #ffffff 60%)",
-        px: 2,
-      }}
-    >
-      <Paper
-        elevation={0}
-        sx={{
-          width: "100%",
-          maxWidth: 420,
-          p: { xs: 3, sm: 5 },
-          border: "1px solid #dadce0",
-        }}
-      >
-        <Stack spacing={1} alignItems="center" mb={3}>
-          <Avatar sx={{ bgcolor: "#e8f0fe", color: "#1a73e8", width: 56, height: 56 }}>
-            <PsychologyRoundedIcon fontSize="large" />
-          </Avatar>
-          <Wordmark size={26} />
-          <Typography variant="h5" sx={{ mt: 1 }}>
-            {mode === "login" ? "Sign in" : "Create account"}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            to keep your knowledge cached
-          </Typography>
-        </Stack>
-
-        <Box component="form" onSubmit={submit}>
-          <Stack spacing={2.5}>
-            <TextField
-              label="Email"
+    <div className="auth-wrap">
+      <div className="auth-card">
+        <div className="center">
+          <Wordmark />
+        </div>
+        <div className="lead">
+          <h1>{mode === "login" ? "Sign in" : "Create account"}</h1>
+          <p>Cache what you learn. Ship what you cache.</p>
+        </div>
+        <form onSubmit={submit} className="stack">
+          <div className="field">
+            <label>Email</label>
+            <input
+              className="input"
               type="email"
-              fullWidth
               autoFocus
+              placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <TextField
-              label="Password"
+          </div>
+          <div className="field">
+            <label>Password</label>
+            <input
+              className="input"
               type="password"
-              fullWidth
+              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Stack direction="row" justifyContent="space-between" alignItems="center">
-              <Button
-                variant="text"
-                onClick={() => setMode(mode === "login" ? "register" : "login")}
-              >
-                {mode === "login" ? "Create account" : "Have an account?"}
-              </Button>
-              <Button type="submit" variant="contained" disabled={busy}>
-                {busy ? <CircularProgress size={20} color="inherit" /> : mode === "login" ? "Sign in" : "Sign up"}
-              </Button>
-            </Stack>
-          </Stack>
-        </Box>
-      </Paper>
+          </div>
+          <button className="btn block" type="submit" disabled={busy}>
+            {busy ? <span className="spinner" /> : mode === "login" ? "Sign in" : "Sign up"}
+          </button>
+          <button
+            type="button"
+            className="btn subtle"
+            onClick={() => setMode(mode === "login" ? "register" : "login")}
+          >
+            {mode === "login" ? "Need an account? Create one" : "Have an account? Sign in"}
+          </button>
+        </form>
+      </div>
       {node}
-    </Box>
+    </div>
   );
 }
 
+/* ── dashboard ─────────────────────────────────────────────────────────── */
 function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => void }) {
   const [cards, setCards] = useState<CardMsg[]>([]);
+  const [history, setHistory] = useState<CardMsg[]>([]);
   const [loading, setLoading] = useState(true);
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
-  const [dsaUrl, setDsaUrl] = useState("");
-  const [dsaComment, setDsaComment] = useState("");
-  const [notice, setNotice] = useState<string | null>(null);
-  const { capture, node } = useErr();
+  const [activeDay, setActiveDay] = useState<string | null>(null);
+  const { fail, ok, node } = useToast();
 
   const load = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await cardClient.listDueCards({});
-      setCards(res.cards);
+      const [due, all] = await Promise.all([
+        cardClient.listDueCards({}),
+        cardClient.listHistory({}),
+      ]);
+      setCards(due.cards);
+      setHistory(all.cards);
     } catch (err) {
-      capture(err);
+      fail(err);
     } finally {
       setLoading(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fail]);
 
   useEffect(() => {
     void load();
   }, [load]);
+
+  // Group the full history into ordered days (newest first).
+  const days = (() => {
+    const map = new Map<string, CardMsg[]>();
+    for (const c of history) {
+      if (!c.createdAt) continue;
+      const k = dayKey(c.createdAt);
+      (map.get(k) ?? map.set(k, []).get(k)!).push(c);
+    }
+    return [...map.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1));
+  })();
+  const activeCards = activeDay ? history.filter((c) => c.createdAt && dayKey(c.createdAt) === activeDay) : [];
 
   const create = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -216,9 +228,10 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
       await cardClient.createCard({ front, back });
       setFront("");
       setBack("");
+      ok("Cached.");
       await load();
     } catch (err) {
-      capture(err);
+      fail(err);
     }
   };
 
@@ -227,196 +240,485 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
       await cardClient.reviewCard({ cardId: card.id, passed });
       setCards((cs) => cs.filter((c) => c.id !== card.id));
     } catch (err) {
-      capture(err);
-    }
-  };
-
-  // Tick off a problem from the recommendation email: it graduates into the
-  // revision ladder and is never recommended again.
-  const markDsaDone = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!dsaUrl.trim()) return;
-    try {
-      await cardClient.markDsaProblemDone({ url: dsaUrl.trim(), comment: dsaComment.trim() });
-      setDsaUrl("");
-      setDsaComment("");
-      setNotice("Marked done — added to your revision ladder.");
-    } catch (err) {
-      capture(err);
+      fail(err);
     }
   };
 
   const initial = (email ?? "?").charAt(0).toUpperCase();
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#f8f9fa" }}>
-      <AppBar position="sticky">
-        <Toolbar>
-          <Stack direction="row" spacing={1.5} alignItems="center" sx={{ flexGrow: 1 }}>
-            <PsychologyRoundedIcon sx={{ color: "#1a73e8" }} />
-            <Wordmark />
-          </Stack>
-          <Tooltip title={email ?? ""}>
-            <Avatar sx={{ bgcolor: "#1a73e8", width: 32, height: 32, fontSize: 16, mr: 1 }}>
-              {initial}
-            </Avatar>
-          </Tooltip>
-          <Tooltip title="Log out">
-            <IconButton onClick={onLogout} size="small">
-              <LogoutRoundedIcon />
-            </IconButton>
-          </Tooltip>
-        </Toolbar>
-      </AppBar>
+    <div className="shell">
+      <div className="aurora" aria-hidden />
+      <header className="topbar">
+        <Wordmark big />
+        <div className="spacer" />
+        <div className="avatar" title={email ?? ""}>
+          {initial}
+        </div>
+        <button className="btn logout" onClick={onLogout}>
+          <LogOut size={16} strokeWidth={2.2} />
+          Logout
+        </button>
+      </header>
 
-      <Container maxWidth="md" sx={{ py: 4 }}>
-        <Paper elevation={0} sx={{ p: 3, mb: 4, border: "1px solid #dadce0" }}>
-          <Typography variant="h6" mb={2}>
-            New card
-          </Typography>
-          <Box component="form" onSubmit={create}>
-            <Stack spacing={2}>
-              <TextField
-                label="Front — prompt"
-                fullWidth
-                value={front}
-                onChange={(e) => setFront(e.target.value)}
-              />
-              <TextField
-                label="Back — answer"
-                fullWidth
-                multiline
-                minRows={2}
-                value={back}
-                onChange={(e) => setBack(e.target.value)}
-              />
-              <Box>
-                <Button type="submit" variant="contained" startIcon={<AddRoundedIcon />}>
-                  Add card
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-        </Paper>
+      <div className="workspace">
+        {/* sliding stage: pane 0 = today, pane 1 = a chosen history day */}
+        <main className="stage">
+          <div className={`stage-track${activeDay ? " slid" : ""}`}>
+            {/* ── pane: today ── */}
+            <section className="pane">
+              <div className="page-head">
+                <h1 className="big-today">Today</h1>
+                <div className="rule" />
+                <p className="page-sub">Cache what you learn. Ship what you cache.</p>
+              </div>
 
-        <Paper elevation={0} sx={{ p: 3, mb: 4, border: "1px solid #dadce0" }}>
-          <Typography variant="h6" mb={0.5}>
-            Mark a DSA problem done
-          </Typography>
-          <Typography variant="body2" color="text.secondary" mb={2}>
-            Paste a LeetCode link from your recommendation email. It joins the revision ladder and stops being recommended.
-          </Typography>
-          <Box component="form" onSubmit={markDsaDone}>
-            <Stack spacing={2}>
-              <TextField
-                label="LeetCode URL"
-                type="url"
-                fullWidth
-                value={dsaUrl}
-                onChange={(e) => setDsaUrl(e.target.value)}
-              />
-              <TextField
-                label="Comment — optional"
-                fullWidth
-                multiline
-                minRows={2}
-                value={dsaComment}
-                onChange={(e) => setDsaComment(e.target.value)}
-              />
-              <Box>
-                <Button type="submit" variant="outlined" startIcon={<DoneAllRoundedIcon />}>
-                  Mark done
-                </Button>
-              </Box>
-            </Stack>
-          </Box>
-        </Paper>
-
-        <Stack direction="row" alignItems="center" spacing={1.5} mb={2}>
-          <Typography variant="h5">Due now</Typography>
-          <Chip label={cards.length} color="primary" size="small" />
-        </Stack>
-
-        {loading ? (
-          <Box sx={{ display: "grid", placeItems: "center", py: 6 }}>
-            <CircularProgress />
-          </Box>
-        ) : cards.length === 0 ? (
-          <Paper
-            elevation={0}
-            sx={{ p: 6, textAlign: "center", border: "1px dashed #dadce0", color: "text.secondary" }}
-          >
-            <PsychologyRoundedIcon sx={{ fontSize: 48, opacity: 0.4 }} />
-            <Typography mt={1}>All caught up. Nothing due right now.</Typography>
-          </Paper>
-        ) : (
-          <Stack spacing={1.5}>
-            {cards.map((card) => (
-              <Card
-                key={String(card.id)}
-                elevation={0}
-                sx={{
-                  border: "1px solid #dadce0",
-                  transition: "box-shadow .2s, transform .2s",
-                  "&:hover": { boxShadow: "0 1px 3px rgba(60,64,67,.3), 0 4px 8px rgba(60,64,67,.15)" },
-                }}
-              >
-                <CardContent>
-                  <Stack direction="row" spacing={1} mb={1}>
-                    <Chip
-                      label={card.type}
-                      size="small"
-                      color={card.type === "DSA" ? "secondary" : "default"}
-                      variant="outlined"
+              <section className="panel">
+                <div className="panel-head">
+                  <Terminal size={16} strokeWidth={2.2} />
+                  <h2>Cache a Note</h2>
+                </div>
+                <form onSubmit={create} className="stack">
+                  <div className="field">
+                    <label>Heading</label>
+                    <input
+                      className="input mono"
+                      placeholder="Short title — this is what shows in the email."
+                      value={front}
+                      onChange={(e) => setFront(e.target.value)}
                     />
-                    <Chip label={`rung ${card.intervalIndex}`} size="small" variant="outlined" />
-                  </Stack>
-                  <Typography variant="subtitle1" fontWeight={500}>
-                    {card.front}
-                  </Typography>
-                  {card.back && (
-                    <>
-                      <Divider sx={{ my: 1 }} />
-                      <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "pre-wrap" }}>
-                        {card.back}
-                      </Typography>
-                    </>
-                  )}
-                </CardContent>
-                <CardActions sx={{ px: 2, pb: 2 }}>
-                  <Button
-                    variant="contained"
-                    color="success"
-                    startIcon={<CheckCircleRoundedIcon />}
-                    onClick={() => review(card, true)}
+                  </div>
+                  <div className="field">
+                    <label>What I learned!</label>
+                    <textarea
+                      className="textarea tall mono"
+                      placeholder="Write as much as you want — paste 1000 lines if you like. Full text lives here; the email shows only the heading."
+                      value={back}
+                      onChange={(e) => setBack(e.target.value)}
+                    />
+                  </div>
+                  <div className="row">
+                    <button className="btn" type="submit">
+                      <Plus size={16} strokeWidth={2.4} />
+                      Cache it
+                    </button>
+                  </div>
+                </form>
+              </section>
+
+              <SolvePanel
+                onDone={async () => {
+                  ok("Solve cached — queued for recall.");
+                  await load();
+                }}
+                onError={fail}
+              />
+
+              <div className="page-head">
+                <h1 className="queue-title">Recall Queue</h1>
+                <div className="rule" />
+                <p className="page-sub">
+                  Cards due for review.
+                  {!loading && cards.length > 0 && ` · ${cards.length} due`}
+                </p>
+              </div>
+
+              {loading ? (
+                <div className="empty">
+                  <Loader2 className="spin" size={20} />
+                </div>
+              ) : cards.length === 0 ? (
+                <div className="queue-empty">
+                  <Zap size={24} strokeWidth={1.8} />
+                  <span className="qe-title">Cache warm</span>
+                  <span className="qe-sub">Nothing to recall right now.</span>
+                </div>
+              ) : (
+                <div className="queue-list">
+                  {cards.map((c) => (
+                    <CardItem key={String(c.id)} card={c} onReview={review} />
+                  ))}
+                </div>
+              )}
+            </section>
+
+            {/* ── pane: a history day ── */}
+            <section className="pane">
+              {activeDay && (
+                <DayView day={activeDay} cards={activeCards} onBack={() => setActiveDay(null)} />
+              )}
+            </section>
+          </div>
+        </main>
+
+        {/* history rail (right) — animated timeline */}
+        <aside className="history-rail">
+          <div className="rail-head">
+            <span className="rail-icon">
+              <Layers size={18} strokeWidth={2.2} />
+            </span>
+            <span className="rail-titles">
+              <span className="rail-eyebrow">◈ Timeline</span>
+              <span className="rail-title">Cache Entries</span>
+              <span className="rail-sub">
+                {days.length === 0
+                  ? "nothing cached yet"
+                  : `${history.length} ${history.length === 1 ? "entry" : "entries"} · ${
+                      days.length
+                    } ${days.length === 1 ? "day" : "days"}`}
+              </span>
+            </span>
+          </div>
+          {days.length === 0 ? (
+            <div className="rail-empty">
+              <CalendarDays size={22} strokeWidth={1.6} />
+              <span>No entries yet.</span>
+            </div>
+          ) : (
+            <div className="timeline">
+              <span className="tl-spine" aria-hidden />
+              {days.map(([key, list], i) => {
+                const dsa = list.filter((c) => c.type === "DSA").length;
+                const notes = list.length - dsa;
+                const active = key === activeDay;
+                return (
+                  <button
+                    key={key}
+                    className={`tl-item${active ? " active" : ""}`}
+                    style={{ "--i": i } as React.CSSProperties}
+                    onClick={() => setActiveDay(active ? null : key)}
                   >
-                    Pass
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    color="error"
-                    startIcon={<CancelRoundedIcon />}
-                    onClick={() => review(card, false)}
-                  >
-                    Fail
-                  </Button>
-                </CardActions>
-              </Card>
-            ))}
-          </Stack>
-        )}
-      </Container>
+                    <span className="tl-node">
+                      <span className="tl-ring" />
+                    </span>
+                    <span className="tl-card">
+                      <span className="tl-top">
+                        <span className="tl-label">{labelForDay(key)}</span>
+                        <span className="tl-count">{list.length}</span>
+                      </span>
+                      <span className="tl-pips">
+                        {dsa > 0 && (
+                          <span className="pip dsa">
+                            <span className="pip-dot" />
+                            {dsa} DSA
+                          </span>
+                        )}
+                        {notes > 0 && (
+                          <span className="pip note">
+                            <span className="pip-dot" />
+                            {notes} note{notes === 1 ? "" : "s"}
+                          </span>
+                        )}
+                      </span>
+                      <ChevronRight className="tl-chev" size={15} />
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </aside>
+      </div>
+
       {node}
-      <Snackbar
-        open={!!notice}
-        autoHideDuration={4000}
-        onClose={() => setNotice(null)}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      >
-        <Alert severity="success" variant="filled" onClose={() => setNotice(null)}>
-          {notice}
-        </Alert>
-      </Snackbar>
-    </Box>
+    </div>
+  );
+}
+
+/* ── card ──────────────────────────────────────────────────────────────── */
+const CO_LIMIT = 8;
+function CardItem({ card, onReview }: { card: CardMsg; onReview: (c: CardMsg, p: boolean) => void }) {
+  const isDsa = card.type === "DSA";
+  const learned = isDsa ? card.comment : card.back;
+  const extra = card.companies.length - CO_LIMIT;
+  return (
+    <div className="card">
+      {/* 1 — heading */}
+      <div className="row between">
+        <div className="title mono">
+          {isDsa && card.url ? (
+            <a href={card.url} target="_blank" rel="noreferrer">
+              {card.front}
+              <ExternalLink size={14} strokeWidth={2.2} />
+            </a>
+          ) : (
+            card.front
+          )}
+        </div>
+        <div className="row">
+          <span className={`chip ${isDsa ? "accent" : ""}`}>{card.type}</span>
+          <span className="chip">rung {card.intervalIndex}</span>
+        </div>
+      </div>
+
+      {/* 2 — what I learned */}
+      {learned && (
+        <div className="learned">
+          <div className="learned-label">What I learned</div>
+          <div className="learned-body mono">{learned}</div>
+        </div>
+      )}
+
+      {/* 3 — DSA meta, always below */}
+      {isDsa && (card.numCompanies > 0 || card.companies.length > 0) && (
+        <div className="dsa-meta">
+          {card.numCompanies > 0 && (
+            <div className="dsa-meta-label">Asked at {card.numCompanies} companies</div>
+          )}
+          {card.companies.length > 0 && (
+            <div className="companies">
+              {card.companies.slice(0, CO_LIMIT).map((co) => (
+                <span key={co} className="co">
+                  {co}
+                </span>
+              ))}
+              {extra > 0 && <span className="co more">+{extra} more</span>}
+            </div>
+          )}
+        </div>
+      )}
+
+      <div className="card-actions">
+        <button className="btn pass" onClick={() => onReview(card, true)} title="Recalled it">
+          <Check size={16} strokeWidth={2.6} />
+          Hit
+        </button>
+        <button className="btn fail" onClick={() => onReview(card, false)} title="Forgot it">
+          <X size={16} strokeWidth={2.6} />
+          Miss
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ── history day view (slides in from the right) ───────────────────────── */
+function DayView({
+  day,
+  cards,
+  onBack,
+}: {
+  day: string;
+  cards: CardMsg[];
+  onBack: () => void;
+}) {
+  const dsa = cards.filter((c) => c.type === "DSA").length;
+  const notes = cards.length - dsa;
+  return (
+    <div className="dayview">
+      <button className="btn back" onClick={onBack}>
+        <ArrowLeft size={16} strokeWidth={2.4} />
+        Back to today
+      </button>
+      <div className="page-head">
+        <h1 className="big-today">{labelForDay(day)}</h1>
+        <div className="rule" />
+        <p className="page-sub">
+          {cards.length} {cards.length === 1 ? "entry" : "entries"}
+          {dsa > 0 && ` · ${dsa} DSA`}
+          {notes > 0 && ` · ${notes} note${notes === 1 ? "" : "s"}`}
+        </p>
+      </div>
+      {cards.length === 0 ? (
+        <div className="empty">Nothing recorded this day.</div>
+      ) : (
+        cards.map((c) => <HistoryCard key={String(c.id)} card={c} />)
+      )}
+    </div>
+  );
+}
+
+function HistoryCard({ card }: { card: CardMsg }) {
+  const isDsa = card.type === "DSA";
+  const learned = isDsa ? card.comment : card.back;
+  const extra = card.companies.length - CO_LIMIT;
+  return (
+    <div className="card">
+      <div className="row between">
+        <div className="title mono">
+          {isDsa && card.url ? (
+            <a href={card.url} target="_blank" rel="noreferrer">
+              {card.front}
+              <ExternalLink size={14} strokeWidth={2.2} />
+            </a>
+          ) : (
+            card.front
+          )}
+        </div>
+        <div className="row">
+          <span className={`chip ${isDsa ? "accent" : ""}`}>{card.type}</span>
+          {card.createdAt && (
+            <span className="chip">
+              <Clock size={12} strokeWidth={2.2} />
+              {timeOf(card.createdAt)}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {learned && (
+        <div className="learned">
+          <div className="learned-label">What I learned</div>
+          <div className="learned-body mono">{learned}</div>
+        </div>
+      )}
+
+      {isDsa && (card.numCompanies > 0 || card.companies.length > 0) && (
+        <div className="dsa-meta">
+          {card.numCompanies > 0 && (
+            <div className="dsa-meta-label">Asked at {card.numCompanies} companies</div>
+          )}
+          {card.companies.length > 0 && (
+            <div className="companies">
+              {card.companies.slice(0, CO_LIMIT).map((co) => (
+                <span key={co} className="co">
+                  {co}
+                </span>
+              ))}
+              {extra > 0 && <span className="co more">+{extra} more</span>}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ── solve-a-problem (inline panel: search picker → comment → submit) ───── */
+function SolvePanel({
+  onDone,
+  onError,
+}: {
+  onDone: () => void;
+  onError: (err: unknown) => void;
+}) {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<DsaProblem[]>([]);
+  const [searching, setSearching] = useState(false);
+  const [picked, setPicked] = useState<DsaProblem | null>(null);
+  const [comment, setComment] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  // Debounced catalog search; skip while a problem is already picked.
+  useEffect(() => {
+    if (picked) return;
+    const q = query.trim();
+    if (q.length < 2) {
+      setResults([]);
+      return;
+    }
+    setSearching(true);
+    const h = window.setTimeout(async () => {
+      try {
+        const res = await cardClient.searchDsaProblems({ query: q, limit: 25 });
+        setResults(res.problems);
+      } catch (err) {
+        onError(err);
+      } finally {
+        setSearching(false);
+      }
+    }, 220);
+    return () => window.clearTimeout(h);
+  }, [query, picked, onError]);
+
+  const submit = async () => {
+    if (!picked) return;
+    setBusy(true);
+    try {
+      await cardClient.markDsaProblemDone({ url: picked.url, comment: comment.trim() });
+      setPicked(null);
+      setComment("");
+      setQuery("");
+      setResults([]);
+      onDone();
+    } catch (err) {
+      onError(err);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <section className="panel">
+      <div className="panel-head">
+        <Search size={16} strokeWidth={2.2} />
+        <h2>Cache a Solve</h2>
+      </div>
+
+      {!picked ? (
+        <div className="stack">
+          <div className="field">
+            <label>Search LeetCode problems by name</label>
+            <div className="search-box">
+              <Search className="search-ico" size={16} strokeWidth={2.2} />
+              <input
+                className="input mono"
+                placeholder="e.g. trapping rain water"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <Loader2
+                className={`spin search-spin${searching ? "" : " is-hidden"}`}
+                size={16}
+              />
+            </div>
+          </div>
+          {results.length > 0 ? (
+            <div className="results">
+              {results.map((p, i) => (
+                <button key={p.url} className="result" onClick={() => setPicked(p)}>
+                  <span className="result-idx">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="result-main">
+                    <span className="name mono">{p.title}</span>
+                    <span className="result-co">
+                      <Zap size={11} strokeWidth={2.3} />
+                      {p.numCompanies} companies
+                    </span>
+                  </span>
+                  <CornerDownRight className="result-pick" size={15} />
+                </button>
+              ))}
+            </div>
+          ) : query.trim().length >= 2 && !searching ? (
+            <div className="hint">No matches — try another name.</div>
+          ) : !searching ? (
+            <div className="hint">Type at least 2 characters to search the catalog.</div>
+          ) : null}
+        </div>
+      ) : (
+        <div className="stack">
+          <div className="picked">
+            <span className="picked-check">
+              <Check size={14} strokeWidth={3} />
+            </span>
+            <span className="name mono">{picked.title}</span>
+            <span className="chip accent">{picked.numCompanies} companies</span>
+            <button
+              className="btn subtle"
+              onClick={() => {
+                setPicked(null);
+                setComment("");
+              }}
+            >
+              change
+            </button>
+          </div>
+          <div className="field">
+            <label>What I learned — optional</label>
+            <textarea
+              className="textarea mono"
+              autoFocus
+              placeholder="Approach, gotchas, complexity…"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </div>
+          <button className="btn block" onClick={submit} disabled={busy}>
+            {busy ? <Loader2 className="spin" size={16} /> : <Check size={16} strokeWidth={2.4} />}
+            Cache this solve
+          </button>
+        </div>
+      )}
+    </section>
   );
 }

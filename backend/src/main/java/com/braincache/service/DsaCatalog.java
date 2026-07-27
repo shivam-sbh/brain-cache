@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,20 @@ public class DsaCatalog {
 
     /** One problem row. companies kept as the raw semicolon-joined string. */
     public record Problem(String title, String url, int numCompanies, String companies) {
+        /** Split the semicolon-joined company blob into a clean list. */
+        public List<String> companyList() {
+            if (companies == null || companies.isBlank()) {
+                return List.of();
+            }
+            List<String> out = new ArrayList<>();
+            for (String c : companies.split(";")) {
+                String t = c.trim();
+                if (!t.isEmpty()) {
+                    out.add(t);
+                }
+            }
+            return out;
+        }
     }
 
     private final Path dataDir;
@@ -63,6 +78,24 @@ public class DsaCatalog {
 
     public Optional<Problem> byUrl(String url) {
         return Optional.ofNullable(byUrl.get(url));
+    }
+
+    /**
+     * Case-insensitive title search across every difficulty, most-asked first.
+     * Powers the "solve a problem" picker in the UI.
+     */
+    public List<Problem> search(String query, int limit) {
+        String q = query == null ? "" : query.trim().toLowerCase();
+        if (q.isEmpty()) {
+            return List.of();
+        }
+        int cap = limit <= 0 ? 20 : Math.min(limit, 50);
+        return byDifficulty.values().stream()
+                .flatMap(List::stream)
+                .filter(p -> p.title().toLowerCase().contains(q))
+                .sorted(Comparator.comparingInt(Problem::numCompanies).reversed())
+                .limit(cap)
+                .toList();
     }
 
     // Minimal CSV read for our own well-formed export: Rank,Title,URL,NumCompanies,Companies.

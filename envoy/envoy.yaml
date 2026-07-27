@@ -45,6 +45,9 @@ static_resources:
     - name: braincache_grpc
       connect_timeout: 1s
       type: STRICT_DNS
+      # host.docker.internal resolves to an IPv6 gateway that nothing listens on;
+      # force IPv4 so we reach the host-mapped backend on :9090.
+      dns_lookup_family: V4_ONLY
       lb_policy: ROUND_ROBIN
       typed_extension_protocol_options:
         envoy.extensions.upstreams.http.v3.HttpProtocolOptions:

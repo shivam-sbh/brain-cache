@@ -69,9 +69,16 @@ public class RecommendationJob {
         for (Problem p : recs) {
             sb.append(i++).append(". ").append(p.title())
                     .append("  (asked at ").append(p.numCompanies()).append(" companies)\n")
-                    .append("   ").append(p.url()).append('\n');
+                    .append("   ").append(p.url()).append('\n')
+                    .append("   Companies: ").append(companiesLine(p)).append('\n');
         }
         sb.append("\nSolve, then mark done (MarkDsaProblemDone) to add it to your revisions.");
         return sb.toString();
+    }
+
+    // Show every company, no cap — lists can be 75+ and that's fine.
+    private String companiesLine(Problem p) {
+        List<String> all = p.companyList();
+        return all.isEmpty() ? "—" : String.join(", ", all);
     }
 }

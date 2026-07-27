@@ -3,12 +3,18 @@ package com.braincache.grpc;
 import com.braincache.grpc.proto.Card;
 import com.braincache.grpc.proto.CardServiceGrpc;
 import com.braincache.grpc.proto.CreateCardRequest;
+import com.braincache.grpc.proto.DsaProblem;
 import com.braincache.grpc.proto.ListDueCardsRequest;
 import com.braincache.grpc.proto.ListDueCardsResponse;
+import com.braincache.grpc.proto.ListHistoryRequest;
+import com.braincache.grpc.proto.ListHistoryResponse;
 import com.braincache.grpc.proto.MarkDsaProblemDoneRequest;
 import com.braincache.grpc.proto.ReviewCardRequest;
+import com.braincache.grpc.proto.SearchDsaProblemsRequest;
+import com.braincache.grpc.proto.SearchDsaProblemsResponse;
 import com.braincache.security.GrpcSecurity;
 import com.braincache.service.CardService;
+import com.braincache.service.DsaCatalog;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -27,9 +33,11 @@ import net.devh.boot.grpc.server.service.GrpcService;
 public class CardGrpcService extends CardServiceGrpc.CardServiceImplBase {
 
     private final CardService cardService;
+    private final DsaCatalog catalog;
 
-    public CardGrpcService(CardService cardService) {
+    public CardGrpcService(CardService cardService, DsaCatalog catalog) {
         this.cardService = cardService;
+        this.catalog = catalog;
     }
 
     @Override
@@ -58,9 +66,42 @@ public class CardGrpcService extends CardServiceGrpc.CardServiceImplBase {
     }
 
     @Override
+    public void searchDsaProblems(SearchDsaProblemsRequest request, StreamObserver<SearchDsaProblemsResponse> observer) {
+        try {
+            GrpcSecurity.requireUserEmail(); // guarded, though it reads only static catalog
+            SearchDsaProblemsResponse.Builder reply = SearchDsaProblemsResponse.newBuilder();
+            for (DsaCatalog.Problem p : catalog.search(request.getQuery(), request.getLimit())) {
+                reply.addProblems(DsaProblem.newBuilder()
+                        .setTitle(p.title())
+                        .setUrl(p.url())
+                        .setNumCompanies(p.numCompanies())
+                        .addAllCompanies(p.companyList())
+                        .build());
+            }
+            observer.onNext(reply.build());
+            observer.onCompleted();
+        } catch (StatusRuntimeException e) {
+            observer.onError(e);
+        }
+    }
+
+    @Override
     public void markDsaProblemDone(MarkDsaProblemDoneRequest request, StreamObserver<Card> observer) {
         guarded(observer, email ->
                 toProto(cardService.markDsaDone(email, request.getUrl(), request.getComment())));
+    }
+
+    @Override
+    public void listHistory(ListHistoryRequest request, StreamObserver<ListHistoryResponse> observer) {
+        try {
+            String email = GrpcSecurity.requireUserEmail();
+            ListHistoryResponse.Builder reply = ListHistoryResponse.newBuilder();
+            cardService.listHistory(email).forEach(c -> reply.addCards(toProto(c)));
+            observer.onNext(reply.build());
+            observer.onCompleted();
+        } catch (StatusRuntimeException e) {
+            observer.onError(e);
+        }
     }
 
     // Shared plumbing for the single-Card responses: resolve identity, run the action,
@@ -81,15 +122,23 @@ public class CardGrpcService extends CardServiceGrpc.CardServiceImplBase {
 
     private Card toProto(com.braincache.domain.Card c) {
         // proto strings can't be null; coalesce the DSA-only fields to "".
-        return Card.newBuilder()
+        String url = c.getUrl() == null ? "" : c.getUrl();
+        Card.Builder b = Card.newBuilder()
                 .setId(c.getId())
                 .setFront(c.getFront())
                 .setBack(c.getBack())
                 .setIntervalIndex(c.getIntervalIndex())
                 .setNextReview(c.getNextReview().toString())
                 .setType(c.getType().name())
-                .setUrl(c.getUrl() == null ? "" : c.getUrl())
+                .setUrl(url)
                 .setComment(c.getComment() == null ? "" : c.getComment())
-                .build();
+                .setCreatedAt(c.getCreatedAt().toString());
+        // Enrich DSA cards with the company list from the catalog (by URL).
+        if (!url.isEmpty()) {
+            catalog.byUrl(url).ifPresent(p -> b
+                    .setNumCompanies(p.numCompanies())
+                    .addAllCompanies(p.companyList()));
+        }
+        return b.build();
     }
 }

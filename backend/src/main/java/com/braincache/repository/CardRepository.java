@@ -30,5 +30,8 @@ public interface CardRepository extends JpaRepository<Card, Long> {
 
     List<Card> findByUserEmailAndType(String userEmail, CardType type);
 
+    // Full history for the caller, newest first — backs the ListHistory RPC / history rail.
+    List<Card> findByUserEmailOrderByCreatedAtDesc(String userEmail);
+
     boolean existsByUserEmailAndUrl(String userEmail, String url);
 }

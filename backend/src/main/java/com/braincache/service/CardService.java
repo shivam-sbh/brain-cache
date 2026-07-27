@@ -59,6 +59,11 @@ public class CardService {
         return cards.findByUserEmailAndNextReviewBefore(userEmail, Instant.now());
     }
 
+    // Whole history for the caller, newest first — grouped by day on the client.
+    public List<Card> listHistory(String userEmail) {
+        return cards.findByUserEmailOrderByCreatedAtDesc(userEmail);
+    }
+
     /**
      * Apply a review outcome. passed -> index+1 (capped at last rung); failed -> 0.
      * Reschedules nextReview off the new rung. Ownership enforced via id+email lookup.

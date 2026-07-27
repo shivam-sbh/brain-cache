@@ -132,7 +132,8 @@
                     <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-                    <protoSourceRoot>${project.basedir}/proto</protoSourceRoot>
+                    <!-- Shared contract lives at the monorepo root; the frontend generates from the same file. -->
+                    <protoSourceRoot>${project.basedir}/../proto</protoSourceRoot>
                 </configuration>
                 <executions>
                     <execution>

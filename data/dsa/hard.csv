@@ -1,0 +1,759 @@
+Rank,Title,URL,NumCompanies,Companies
+1,Trapping Rain Water,https://leetcode.com/problems/trapping-rain-water,75,accenture;adobe;airbnb;amazon;american-express;apple;arcesium;bitgo;bloomberg;buyhatke;bytedance;c3-ai;cadence;capgemini;crowdstrike;de-shaw;docusign;epam-systems;expedia;flipkart;goldman-sachs;google;grammarly;hashedin;hive;huawei;ibm;infosys;inmobi;intel;jpmorgan;makemytrip;medianet;meta;microsoft;moloco;myntra;navi;nextdoor;nutanix;nvidia;openai;oracle;paypal;paytm;phonepe;publicis-sapient;qualcomm;rakuten;redbus;roblox;salesforce;samsung;sap;servicenow;snowflake;splunk;squarepoint-capital;swiggy;tcs;tekion;tesla;thousandeyes;tiktok;twitter;uber;urban-company;visa;walmart-labs;wix;yandex;zenefits;zeta;zoho;zopsmart
+2,Merge k Sorted Lists,https://leetcode.com/problems/merge-k-sorted-lists,50,airbnb;amazon;anduril;apple;bloomberg;bytedance;cisco;citadel;cloudflare;cme-group;cohesity;coupang;deloitte;docusign;doordash;ebay;flipkart;goldman-sachs;google;huawei;hubspot;ibm;ixl;linkedin;meta;microsoft;mongodb;netskope;nutanix;nvidia;oracle;oyo;palantir;pinterest;qualcomm;rippling;rivian;salesforce;samsung;snowflake;sofi;tcs;tiktok;twitter;two-sigma;uber;verkada;walmart-labs;warnermedia;yandex
+3,Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum,46,adobe;agoda;amazon;apple;aurora;autodesk;blinkit;bloomberg;bookingcom;cisco;citadel;coupang;de-shaw;doordash;expedia;gameskraft;gojek;goldman-sachs;google;ibm;jpmorgan;juspay;line;makemytrip;meta;microsoft;mongodb;nutanix;nvidia;oracle;palo-alto-networks;phonepe;roblox;salesforce;servicenow;sprinklr;tcs;tiktok;uber;visa;wayfair;yandex;zenefits;zepto;zeta;zoho
+4,Median of Two Sorted Arrays,https://leetcode.com/problems/median-of-two-sorted-arrays,45,accenture;adobe;amazon;apple;arcesium;autodesk;bloomberg;capgemini;cognizant;de-shaw;dropbox;epam-systems;flipkart;ge-healthcare;goldman-sachs;google;ibm;meta;microsoft;nvidia;okta;oracle;palo-alto-networks;paypal;pwc;qualcomm;rippling;salesforce;samsung;servicenow;swiggy;tcs;tesla;tiktok;turing;uber;udemy;visa;walmart-labs;wix;yahoo;yandex;zenefits;zeta;zoho
+5,Text Justification,https://leetcode.com/problems/text-justification,44,airbnb;amazon;anyscale;apple;atlassian;autodesk;bcg;bloomberg;bytedance;capital-one;coinbase;coursera;cyntexa;databricks;de-shaw;goldman-sachs;google;hive;karat;kotak-mahindra-bank;lime;linkedin;meta;microsoft;mongodb;moveworks;notion;oracle;paypal;pinterest;quora;robinhood;roblox;samsara;sentry;sig;sofi;tiktok;tinder;uber;visa;waymo;weride;yandex
+6,Word Ladder,https://leetcode.com/problems/word-ladder,40,adobe;amazon;apple;arcesium;bloomberg;box;bytedance;capital-one;citadel;clevertap;docusign;ebay;expedia;fanatics;flipkart;goldman-sachs;google;linkedin;makemytrip;meta;microsoft;navan;okta;oracle;phonepe;reddit;salesforce;samsung;servicenow;snapchat;sofi;tcs;tekion;tesla;the-trade-desk;tiktok;uber;visa;yelp;zscaler
+7,Find Median from Data Stream,https://leetcode.com/problems/find-median-from-data-stream,38,amazon;anduril;apple;bloomberg;citadel;cohesity;coupang;docusign;ebay;flipkart;goldman-sachs;google;intuit;ixl;jpmorgan;kla;meesho;meta;microsoft;nvidia;okta;oracle;paypal;pinterest;salesforce;snowflake;splunk;spotify;sprinklr;stackadapt;tiktok;tinder;twitch;uber;visa;walmart-labs;worldquant;yandex
+8,Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring,36,adobe;airbnb;amazon;apolloio;apple;bloomberg;cisco;dp-world;goldman-sachs;google;harness;ibm;infosys;linkedin;lyft;makemytrip;meesho;meta;microsoft;moloco;oracle;qualtrics;salesforce;sap;snapchat;snowflake;sofi;swiggy;thoughtspot;tiktok;uber;walmart-labs;yandex;zeta;zoho;zopsmart
+9,First Missing Positive,https://leetcode.com/problems/first-missing-positive,32,amazon;apple;bloomberg;cognizant;epam-systems;flipkart;geico;general-motors;goldman-sachs;google;harness;infosys;makemytrip;meta;microsoft;myntra;netflix;netskope;nutanix;oracle;paypal;phonepe;salesforce;servicenow;siemens;soundhound;sprinklr;swiggy;tcs;tesla;walmart-labs;zomato
+10,LFU Cache,https://leetcode.com/problems/lfu-cache,32,amazon;apple;bloomberg;citadel;coupang;devrev;doordash;expedia;goldman-sachs;google;kla;kla-tencor;linkedin;meta;microsoft;netflix;netskope;nutanix;olx;oracle;paypal;rippling;salesforce;servicenow;snapchat;tiktok;uber;verkada;visa;walmart-labs;wells-fargo;zomato
+11,Largest Rectangle in Histogram,https://leetcode.com/problems/largest-rectangle-in-histogram,30,adobe;amazon;apple;bitgo;bloomberg;capital-one;cisco;coupang;devrev;doordash;flipkart;goldman-sachs;google;infosys;josh-technology;linkedin;maq-software;meta;microsoft;myntra;oracle;roblox;tcs;thoughtspot;tiktok;uber;visa;walmart-labs;waymo;zoho
+12,Reverse Nodes in k-Group,https://leetcode.com/problems/reverse-nodes-in-k-group,26,adobe;amazon;apple;arista-networks;autodesk;bloomberg;buyhatke;cadence;cisco;goldman-sachs;google;infosys;josh-technology;mathworks;meta;microsoft;oracle;qualcomm;salesforce;sigmoid;tiktok;uber;visa;walmart-labs;zeta;zopsmart
+13,Longest Valid Parentheses,https://leetcode.com/problems/longest-valid-parentheses,25,accenture;amazon;bloomberg;bookingcom;de-shaw;flipkart;google;ibm;infosys;inmobi;intuit;linkedin;makemytrip;maq-software;meta;microsoft;nielsen;nike;nykaa;oracle;sprinklr;tiktok;uber;visa;zoho
+14,Maximum Profit in Job Scheduling,https://leetcode.com/problems/maximum-profit-in-job-scheduling,25,airbnb;amazon;bloomberg;bytedance;docusign;doordash;flipkart;goldman-sachs;google;infosys;meesho;meta;microsoft;oracle;palo-alto-networks;paypal;phonepe;pinterest;ponyai;snowflake;swiggy;tiktok;uber;verkada;weride
+15,Regular Expression Matching,https://leetcode.com/problems/regular-expression-matching,25,accenture;airbnb;amazon;apple;bloomberg;bytedance;cockroach-labs;coupang;google;infosys;meta;microsoft;netskope;oracle;phonepe;rokt;snowflake;sprinklr;tcs;tiktok;twitter;uber;waymo;worldquant;zoho
+16,Serialize and Deserialize Binary Tree,https://leetcode.com/problems/serialize-and-deserialize-binary-tree,24,amazon;apple;atlassian;bloomberg;citadel;doordash;flipkart;general-motors;google;hive;linkedin;meta;microsoft;nutanix;nvidia;oracle;paypal;qualcomm;quora;tcs;tiktok;uber;workday;yahoo
+17,Basic Calculator,https://leetcode.com/problems/basic-calculator,23,adobe;amazon;apple;bloomberg;boeing;bytedance;canva;coupang;doordash;ericsson;google;meta;microsoft;oracle;palo-alto-networks;ripple;rokt;salesforce;snapchat;snowflake;squarepoint-capital;tiktok;uber
+18,Binary Tree Maximum Path Sum,https://leetcode.com/problems/binary-tree-maximum-path-sum,23,adobe;amazon;apple;baidu;bloomberg;citadel;datadog;doordash;flipkart;goldman-sachs;google;meta;microsoft;nutanix;oracle;paypal;salesforce;snapchat;tcs;tiktok;uber;wix;yandex
+19,Candy,https://leetcode.com/problems/candy,23,accenture;amazon;bending-spoons;bloomberg;dropbox;flipkart;goldman-sachs;google;ibm;infosys;meta;microsoft;morgan-stanley;oracle;phonepe;roku;salesforce;sap;tiktok;uber;urban-company;visa;walmart-labs
+20,Integer to English Words,https://leetcode.com/problems/integer-to-english-words,23,amazon;apple;attentive;bloomberg;cisco;delhivery;faire;fractal-analytics;goldman-sachs;google;gusto;linkedin;meta;microsoft;nvidia;oracle;palantir;roblox;snowflake;tcs;warnermedia;zoho;zscaler
+21,Reconstruct Itinerary,https://leetcode.com/problems/reconstruct-itinerary,22,adobe;amazon;apple;bloomberg;bookingcom;capital-one;citadel;compass;ebay;flipkart;google;hopper;meta;microsoft;netflix;palo-alto-networks;pinterest;salesforce;uber;visa;walmart-labs;yandex
+22,Word Search II,https://leetcode.com/problems/word-search-ii,20,airbnb;amazon;apple;aurora;bloomberg;cisco;de-shaw;doordash;google;meta;microsoft;oracle;snapchat;snowflake;tiktok;two-sigma;uber;wix;zoho;zoom
+23,Split Array Largest Sum,https://leetcode.com/problems/split-array-largest-sum,19,amazon;baidu;bloomberg;de-shaw;deloitte;google;infosys;meta;microsoft;nutanix;oracle;phonepe;pinterest;salesforce;samsung;tekion;uber;yugabyte;zeta
+24,Bus Routes,https://leetcode.com/problems/bus-routes,17,amazon;bitgo;bloomberg;deltax;goldman-sachs;google;info-edge;meta;microsoft;oracle;phonepe;pinterest;salesforce;snapchat;tiktok;uber;walmart-labs
+25,Design In-Memory File System,https://leetcode.com/problems/design-in-memory-file-system,17,amazon;baidu;circle;citadel;coinbase;coupang;doordash;google;meta;microsoft;netskope;observeai;oracle;shopify;snowflake;tiktok;uber
+26,Number of Visible People in a Queue,https://leetcode.com/problems/number-of-visible-people-in-a-queue,17,amazon;bloomberg;citi;doordash;expedia;google;linkedin;meesho;meta;microsoft;nvidia;oracle;rippling;salesforce;servicenow;tiktok;waymo
+27,Subarrays with K Different Integers,https://leetcode.com/problems/subarrays-with-k-different-integers,17,amazon;bloomberg;capital-one;google;hashedin;ibm;infosys;meta;microsoft;morgan-stanley;oracle;roblox;salesforce;servicenow;squarepoint-capital;tiktok;uber
+28,Sudoku Solver,https://leetcode.com/problems/sudoku-solver,17,amazon;apple;bloomberg;citadel;confluent;doordash;ebay;goldman-sachs;google;intuit;meta;microsoft;oracle;riot-games;snapchat;uber;zoho
+29,Wildcard Matching,https://leetcode.com/problems/wildcard-matching,17,amazon;atlassian;bloomberg;coupang;de-shaw;google;infosys;instacart;meta;microsoft;oracle;snapchat;tiktok;twitter;two-sigma;walmart-labs;zoho
+30,Alien Dictionary,https://leetcode.com/problems/alien-dictionary,16,airbnb;amazon;apple;bloomberg;coupang;google;meta;microsoft;nuro;pocket-gems;snapchat;tiktok;twitter;uber;waymo;wix
+31,Basic Calculator III,https://leetcode.com/problems/basic-calculator-iii,16,amazon;coupang;doordash;google;houzz;hulu;intuit;jingchi;meta;microsoft;motive;oracle;pocket-gems;snapchat;tiktok;verkada
+32,Longest Increasing Path in a Matrix,https://leetcode.com/problems/longest-increasing-path-in-a-matrix,16,adobe;amazon;apple;bloomberg;doordash;duolingo;epic-systems;google;meta;microsoft;nutanix;phonepe;salesforce;tiktok;uber;weride
+33,Making A Large Island,https://leetcode.com/problems/making-a-large-island,16,airbnb;amazon;anduril;bloomberg;doordash;google;linkedin;medianet;meta;microsoft;moloco;snapchat;snowflake;tiktok;uber;uipath
+34,Max Points on a Line,https://leetcode.com/problems/max-points-on-a-line,16,amazon;apple;bloomberg;cisco;citadel;google;linkedin;meesho;meta;microsoft;nvidia;sprinklr;twitter;waymo;zoho;zoox
+35,Word Break II,https://leetcode.com/problems/word-break-ii,16,amazon;anduril;bloomberg;dropbox;google;grammarly;meta;microsoft;mongodb;moveworks;oracle;snapchat;tiktok;twitter;uber;visa
+36,Word Ladder II,https://leetcode.com/problems/word-ladder-ii,16,amazon;apple;bloomberg;box;citadel;google;linkedin;lyft;meta;microsoft;nutanix;okta;tesla;tiktok;uber;yelp
+37,Maximal Rectangle,https://leetcode.com/problems/maximal-rectangle,15,amazon;arcesium;bloomberg;flipkart;goldman-sachs;google;intuit;meta;microsoft;salesforce;sprinklr;tcs;visa;zeta;zoho
+38,N-Queens,https://leetcode.com/problems/n-queens,15,accenture;adobe;amazon;bloomberg;goldman-sachs;google;huawei;ibm;infosys;meta;microsoft;oracle;tcs;tiktok;zoho
+39,Best Time to Buy and Sell Stock III,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii,14,amazon;apple;bloomberg;bolt;citadel;goldman-sachs;google;meta;microsoft;paypal;snapchat;tekion;tiktok;visa
+40,Binary Tree Cameras,https://leetcode.com/problems/binary-tree-cameras,14,6sense;amazon;bloomberg;de-shaw;dp-world;ebay;goldman-sachs;google;graviton;mathworks;meta;microsoft;nutanix;zeta
+41,Burst Balloons,https://leetcode.com/problems/burst-balloons,14,amazon;bloomberg;goldman-sachs;google;meta;microsoft;paytm;phonepe;salesforce;samsung;snapchat;tcs;uber;uipath
+42,Distinct Subsequences,https://leetcode.com/problems/distinct-subsequences,14,amazon;bloomberg;coupang;google;jpmorgan;meesho;meta;microsoft;oracle;salesforce;swiggy;trilogy;walmart-labs;zoho
+43,Shortest Distance from All Buildings,https://leetcode.com/problems/shortest-distance-from-all-buildings,14,amazon;apple;applied-intuition;bloomberg;bytedance;doordash;google;meta;microsoft;tiktok;uber;waymo;wix;zenefits
+44,Shortest Path in a Grid with Obstacles Elimination,https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination,14,adobe;amazon;appfolio;bloomberg;databricks;google;imc;meta;nuro;oracle;pinterest;snapchat;tiktok;uber
+45,The Skyline Problem,https://leetcode.com/problems/the-skyline-problem,14,amazon;apple;bloomberg;goldman-sachs;google;meta;microsoft;nvidia;siemens;tiktok;twitter;uber;yelp;zomato
+46,Trapping Rain Water II,https://leetcode.com/problems/trapping-rain-water-ii,14,amazon;bloomberg;bytedance;flipkart;google;medianet;meta;microsoft;oracle;otterai;qualcomm;samsung;twitter;walmart-labs
+47,Vertical Order Traversal of a Binary Tree,https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree,14,amazon;bitgo;bloomberg;deliveroo;doordash;google;meta;microsoft;oracle;roku;salesforce;samsung;tiktok;uber
+48,Department Top Three Salaries,https://leetcode.com/problems/department-top-three-salaries,13,accenture;amazon;bcg;bloomberg;dell;fractal-analytics;google;hcl;meta;microsoft;ozon;tcs;tiktok
+49,Design Search Autocomplete System,https://leetcode.com/problems/design-search-autocomplete-system,13,amazon;apple;bloomberg;cisco;citadel;google;meta;microsoft;mongodb;pinterest;roblox;tiktok;uber
+50,Minimum Number of Taps to Open to Water a Garden,https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden,13,adobe;akuna-capital;amazon;de-shaw;google;meesho;meta;microsoft;morgan-stanley;rippling;salesforce;squarepoint-capital;uber
+51,Reaching Points,https://leetcode.com/problems/reaching-points,13,amazon;blackstone;cloudflare;coursera;goldman-sachs;google;jpmorgan;kla;kla-tencor;microsoft;paypal;snapchat;wayfair
+52,Collect Coins in a Tree,https://leetcode.com/problems/collect-coins-in-a-tree,12,cisco;google;graviton;lucid;meesho;meta;millennium;oracle;phonepe;salesforce;uber;uipath
+53,Count Palindromic Subsequences,https://leetcode.com/problems/count-palindromic-subsequences,12,amazon;atlassian;citadel;dialpad;goldman-sachs;google;microsoft;millennium;phonepe;salesforce;uber;visa
+54,Employee Free Time,https://leetcode.com/problems/employee-free-time,12,airbnb;amazon;apple;bloomberg;citadel;google;intuit;meta;microsoft;pinterest;roblox;tiktok
+55,Insert Delete GetRandom O(1) - Duplicates allowed,https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed,12,affirm;amazon;bloomberg;google;linkedin;meta;microsoft;okta;peloton;tiktok;uber;yelp
+56,Maximum Frequency Stack,https://leetcode.com/problems/maximum-frequency-stack,12,amazon;apple;bloomberg;expedia;flipkart;glovo;google;meta;microsoft;nutanix;salesforce;uber
+57,Meeting Rooms III,https://leetcode.com/problems/meeting-rooms-iii,12,amazon;bloomberg;goldman-sachs;google;ibm;meta;microsoft;oracle;pinterest;tiktok;uber;walmart-labs
+58,Optimal Account Balancing,https://leetcode.com/problems/optimal-account-balancing,12,affirm;amazon;citadel;goldman-sachs;google;intuit;microsoft;pinterest;rippling;salesforce;uber;zscaler
+59,Special Binary String,https://leetcode.com/problems/special-binary-string,12,adobe;amazon;bloomberg;bnp-paribas;coursera;google;grammarly;imc;microsoft;nvidia;rubrik;ukg
+60,All O`one Data Structure,https://leetcode.com/problems/all-oone-data-structure,11,airbnb;amazon;apple;atlassian;bloomberg;google;linkedin;meta;microsoft;nextdoor;uber
+61,Best Time to Buy and Sell Stock IV,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv,11,amazon;apple;citadel;goldman-sachs;google;hashedin;meta;microsoft;nielsen;pubmatic;tiktok
+62,Design a Text Editor,https://leetcode.com/problems/design-a-text-editor,11,amazon;dropbox;google;jane-street;liberty-mutual;meta;microsoft;rippling;salesforce;shopify;uber
+63,IPO,https://leetcode.com/problems/ipo,11,amazon;bloomberg;google;innovaccer;meta;microsoft;phonepe;samsung;stackline;uber;zeta
+64,Russian Doll Envelopes,https://leetcode.com/problems/russian-doll-envelopes,11,amazon;argo-ai;atlassian;bloomberg;goldman-sachs;google;intuit;medianet;meta;microsoft;verily
+65,Sliding Window Median,https://leetcode.com/problems/sliding-window-median,11,amazon;apple;bloomberg;datadog;doordash;google;meta;microsoft;salesforce;snapchat;spotify
+66,Frog Jump,https://leetcode.com/problems/frog-jump,10,amazon;bloomberg;google;microsoft;oracle;otterai;snapchat;sprinklr;squarepoint-capital;tiktok
+67,Guess the Word,https://leetcode.com/problems/guess-the-word,10,amazon;apple;bloomberg;dropbox;general-motors;google;meta;microsoft;verily;verkada
+68,Max Stack,https://leetcode.com/problems/max-stack,10,amazon;google;linkedin;lyft;meta;nutanix;oracle;tiktok;walmart-labs;woven-by-toyota
+69,Minimize Malware Spread,https://leetcode.com/problems/minimize-malware-spread,10,amazon;bny-mellon;doordash;dropbox;google;microsoft;ncr;salesforce;tiktok;uber
+70,Minimum Edge Reversals So Every Node Is Reachable,https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable,10,amazon;cashfree;google;mathworks;meesho;microsoft;oracle;paypal;phonepe;uber
+71,N-Queens II,https://leetcode.com/problems/n-queens-ii,10,amazon;bloomberg;deutsche-bank;google;liftoff;meta;microsoft;snowflake;walmart-labs;zenefits
+72,Number of Islands II,https://leetcode.com/problems/number-of-islands-ii,10,amazon;aurora;google;meta;moloco;phonepe;tiktok;uber;walmart-labs;waymo
+73,Palindrome Partitioning II,https://leetcode.com/problems/palindrome-partitioning-ii,10,amazon;bloomberg;google;josh-technology;meta;microsoft;mykaarma;nutanix;scaler;zeta
+74,Remove Boxes,https://leetcode.com/problems/remove-boxes,10,amazon;capital-one;google;meta;microsoft;phonepe;sprinklr;tencent;teradata;zeta
+75,Remove Invalid Parentheses,https://leetcode.com/problems/remove-invalid-parentheses,10,amazon;bloomberg;deliveroo;google;meta;microsoft;millennium;oracle;rubrik;tiktok
+76,Smallest Range Covering Elements from K Lists,https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists,10,amazon;bloomberg;flipkart;google;linkedin;lyft;meta;microsoft;phonepe;winzo
+77,Best Meeting Point,https://leetcode.com/problems/best-meeting-point,9,amazon;applied-intuition;doordash;google;linkedin;meta;microsoft;snapchat;twitter
+78,Cherry Pickup,https://leetcode.com/problems/cherry-pickup,9,akuna-capital;amazon;flipkart;goldman-sachs;google;meta;microsoft;phonepe;uber
+79,Count Subarrays With Fixed Bounds,https://leetcode.com/problems/count-subarrays-with-fixed-bounds,9,amazon;chubb;google;mathworks;meesho;meta;microsoft;morgan-stanley;uber
+80,Design Excel Sum Formula,https://leetcode.com/problems/design-excel-sum-formula,9,airbnb;amazon;citadel;google;microsoft;openai;ramp-2;rippling;waymo
+81,Number of Ways to Form a Target String Given a Dictionary,https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary,9,amazon;bloomberg;dunzo;google;meesho;meta;snapchat;snowflake;uber
+82,Parallel Courses III,https://leetcode.com/problems/parallel-courses-iii,9,acko;amazon;citadel;google;microsoft;snowflake;stripe;tiktok;two-sigma
+83,Rearranging Fruits,https://leetcode.com/problems/rearranging-fruits,9,amazon;atlassian;bloomberg;google;meta;microsoft;oracle;tiktok;uber
+84,Reverse Pairs,https://leetcode.com/problems/reverse-pairs,9,amazon;apple;bloomberg;deloitte;ebay;google;intuit;meta;microsoft
+85,Shortest Palindrome,https://leetcode.com/problems/shortest-palindrome,9,accenture;amazon;bloomberg;google;meta;microsoft;pocket-gems;uber;visa
+86,Strange Printer,https://leetcode.com/problems/strange-printer,9,amazon;bloomberg;google;inmobi;intuit;meta;microsoft;netease;salesforce
+87,Substring with Concatenation of All Words,https://leetcode.com/problems/substring-with-concatenation-of-all-words,9,amazon;apple;bloomberg;google;infosys;meta;microsoft;samsung;texas-instruments
+88,Block Placement Queries,https://leetcode.com/problems/block-placement-queries,8,autodesk;capital-one;meta;paypay;roblox;sig;uber;visa
+89,Consecutive Numbers Sum,https://leetcode.com/problems/consecutive-numbers-sum,8,airbnb;amazon;de-shaw;google;microsoft;oracle;tiktok;zoho
+90,Contains Duplicate III,https://leetcode.com/problems/contains-duplicate-iii,8,airbnb;amazon;bloomberg;google;meta;microsoft;netflix;palantir
+91,Critical Connections in a Network,https://leetcode.com/problems/critical-connections-in-a-network,8,akuna-capital;amazon;bloomberg;flipkart;google;kla-tencor;microsoft;servicenow
+92,Design Skiplist,https://leetcode.com/problems/design-skiplist,8,amazon;ebay;google;meta;microsoft;optiver;pure-storage;twitter
+93,Dungeon Game,https://leetcode.com/problems/dungeon-game,8,amazon;bloomberg;flipkart;google;meta;microsoft;uber;zoho
+94,Find the Closest Palindrome,https://leetcode.com/problems/find-the-closest-palindrome,8,amazon;bloomberg;goldman-sachs;google;meta;microsoft;uber;yelp
+95,Maximum Number of Events That Can Be Attended II,https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii,8,amazon;bloomberg;general-electric;google;microsoft;phonepe;snowflake;tcs
+96,Maximum Performance of a Team,https://leetcode.com/problems/maximum-performance-of-a-team,8,amazon;citrix;de-shaw;flipkart;google;meta;phonepe;tiktok
+97,Minimum Cost to Cut a Stick,https://leetcode.com/problems/minimum-cost-to-cut-a-stick,8,amazon;bloomberg;cyware;google;line;meta;microsoft;oracle
+98,Minimum Cost to Make at Least One Valid Path in a Grid,https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid,8,amazon;cleartrip;de-shaw;docusign;google;meta;tcs;uber
+99,Minimum Number of Refueling Stops,https://leetcode.com/problems/minimum-number-of-refueling-stops,8,amazon;bloomberg;de-shaw;goldman-sachs;google;meta;microsoft;waymo
+100,Number of Atoms,https://leetcode.com/problems/number-of-atoms,8,agoda;amazon;docusign;fastenal;flipkart;google;microsoft;tiktok
+101,Number of Flowers in Full Bloom,https://leetcode.com/problems/number-of-flowers-in-full-bloom,8,capital-one;cohesity;databricks;google;oracle;phonepe;roblox;uber
+102,Parsing A Boolean Expression,https://leetcode.com/problems/parsing-a-boolean-expression,8,affinity;amazon;bloomberg;goldman-sachs;google;hilabs;meta;microsoft
+103,Partition Array Into Two Arrays to Minimize Sum Difference,https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference,8,amazon;arcesium;bloomberg;google;meta;microsoft;samsung;texas-instruments
+104,Put Marbles in Bags,https://leetcode.com/problems/put-marbles-in-bags,8,amazon;bloomberg;de-shaw;google;meta;microsoft;tiktok;uber
+105,Robot Room Cleaner,https://leetcode.com/problems/robot-room-cleaner,8,amazon;google;linkedin;meta;microsoft;tiktok;uber;waymo
+106,Swim in Rising Water,https://leetcode.com/problems/swim-in-rising-water,8,amazon;de-shaw;doordash;google;meta;microsoft;uber;weride
+107,24 Game,https://leetcode.com/problems/24-game,7,bloomberg;google;meta;microsoft;roku;tiktok;uber
+108,Cherry Pickup II,https://leetcode.com/problems/cherry-pickup-ii,7,amazon;flipkart;google;meta;microsoft;rubrik;sprinklr
+109,Create Maximum Number,https://leetcode.com/problems/create-maximum-number,7,accolite;amazon;bloomberg;flipkart;google;microsoft;oracle
+110,Expression Add Operators,https://leetcode.com/problems/expression-add-operators,7,amazon;bloomberg;google;linkedin;meta;pinterest;tiktok
+111,K-th Smallest in Lexicographical Order,https://leetcode.com/problems/k-th-smallest-in-lexicographical-order,7,amazon;de-shaw;google;hulu;meta;microsoft;tiktok
+112,Longest Duplicate Substring,https://leetcode.com/problems/longest-duplicate-substring,7,amazon;bloomberg;coupang;goldman-sachs;google;meta;tiktok
+113,Minimum Difference in Sums After Removal of Elements,https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements,7,amazon;bloomberg;google;infosys;meta;microsoft;uber
+114,Minimum Difficulty of a Job Schedule,https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule,7,amazon;google;mathworks;microsoft;salesforce;tiktok;turvo
+115,Minimum Number of Increments on Subarrays to Form a Target Array,https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array,7,amazon;dream11;google;ibm;meta;microsoft;oracle
+116,Number of Ways to Paint N × 3 Grid,https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid,7,amazon;bloomberg;fortinet;google;intuit;meta;microsoft
+117,Painting a Grid With Three Different Colors,https://leetcode.com/problems/painting-a-grid-with-three-different-colors,7,amazon;bloomberg;google;intuit;meta;microsoft;uber
+118,Palindrome Pairs,https://leetcode.com/problems/palindrome-pairs,7,airbnb;amazon;goldman-sachs;google;meta;microsoft;wix
+119,Permutation Sequence,https://leetcode.com/problems/permutation-sequence,7,amazon;bloomberg;google;jump-trading;meta;microsoft;twitter
+120,Shortest Subarray with Sum at Least K,https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k,7,amazon;bloomberg;goldman-sachs;google;meta;microsoft;phonepe
+121,Sliding Puzzle,https://leetcode.com/problems/sliding-puzzle,7,airbnb;amazon;google;meta;microsoft;nvidia;uber
+122,Unique Paths III,https://leetcode.com/problems/unique-paths-iii,7,amazon;bloomberg;databricks;goldman-sachs;google;meta;microsoft
+123,Valid Number,https://leetcode.com/problems/valid-number,7,amazon;bloomberg;google;linkedin;meta;microsoft;nutanix
+124,Zuma Game,https://leetcode.com/problems/zuma-game,7,amazon;aurora;baidu;google;inmobi;phonepe;zoho
+125,Count the Number of Infection Sequences,https://leetcode.com/problems/count-the-number-of-infection-sequences,6,meta;microsoft;oracle;sap;tekion;uber
+126,Delete Duplicate Folders in System,https://leetcode.com/problems/delete-duplicate-folders-in-system,6,amazon;bloomberg;bookingcom;google;microsoft;nvidia
+127,Divide Nodes Into the Maximum Number of Groups,https://leetcode.com/problems/divide-nodes-into-the-maximum-number-of-groups,6,accenture;amazon;google;meta;microsoft;uber
+128,Find in Mountain Array,https://leetcode.com/problems/find-in-mountain-array,6,amazon;bloomberg;google;meta;microsoft;oracle
+129,Find Servers That Handled Most Number of Requests,https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests,6,amazon;apple;cisco;citadel;google;wish
+130,Human Traffic of Stadium,https://leetcode.com/problems/human-traffic-of-stadium,6,amazon;bloomberg;google;meta;tiktok;uber
+131,Maximum Difference Between Even and Odd Frequency II,https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-ii,6,amazon;bloomberg;fractal-analytics;google;meta;microsoft
+132,Maximum Number of Points From Grid Queries,https://leetcode.com/problems/maximum-number-of-points-from-grid-queries,6,amazon;bloomberg;google;jpmorgan;meta;uber
+133,Maximum Number of Visible Points,https://leetcode.com/problems/maximum-number-of-visible-points,6,amazon;anduril;aurora;google;nuro;nvidia
+134,Maximum Running Time of N Computers,https://leetcode.com/problems/maximum-running-time-of-n-computers,6,amazon;bloomberg;capital-one;deutsche-bank;google;meta
+135,Maximum Sum of 3 Non-Overlapping Subarrays,https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays,6,amazon;bloomberg;general-motors;google;meta;microsoft
+136,Minimum Cost to Make Array Equal,https://leetcode.com/problems/minimum-cost-to-make-array-equal,6,amazon;cisco;google;hashedin;microsoft;oracle
+137,Minimum Cost to Reach Destination in Time,https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time,6,airbnb;amazon;databricks;google;meta;microsoft
+138,Minimum Cost Walk in Weighted Graph,https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph,6,amazon;de-shaw;google;meta;microsoft;turing
+139,Minimum Insertion Steps to Make a String Palindrome,https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome,6,accenture;amazon;goldman-sachs;google;ibm;oracle
+140,Minimum Number of Removals to Make Mountain Array,https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array,6,amazon;bloomberg;google;meta;microsoft;paypal
+141,Number of Digit One,https://leetcode.com/problems/number-of-digit-one,6,amazon;bloomberg;google;meta;microsoft;salesforce
+142,Painting the Walls,https://leetcode.com/problems/painting-the-walls,6,amazon;de-shaw;google;meesho;meta;snowflake
+143,Patching Array,https://leetcode.com/problems/patching-array,6,amazon;bloomberg;google;meta;microsoft;uber
+144,Robot Collisions,https://leetcode.com/problems/robot-collisions,6,amazon;flipkart;google;meesho;meta;microsoft
+145,Scramble String,https://leetcode.com/problems/scramble-string,6,amazon;bloomberg;darwinbox;google;meta;rubrik
+146,Serialize and Deserialize N-ary Tree,https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree,6,amazon;apple;bloomberg;google;microsoft;tiktok
+147,Set Intersection Size At Least Two,https://leetcode.com/problems/set-intersection-size-at-least-two,6,amazon;dp-world;drawbridge;google;meta;microsoft
+148,Shortest Path to Get All Keys,https://leetcode.com/problems/shortest-path-to-get-all-keys,6,adobe;airbnb;google;phonepe;roku;uber
+149,Split Array With Same Average,https://leetcode.com/problems/split-array-with-same-average,6,amazon;deutsche-bank;google;meesho;microsoft;tcs
+150,Strong Password Checker,https://leetcode.com/problems/strong-password-checker,6,amazon;google;microsoft;siemens;wix;zoho
+151,Tallest Billboard,https://leetcode.com/problems/tallest-billboard,6,amazon;atlassian;google;meta;microsoft;tcs
+152,Trionic Array II,https://leetcode.com/problems/trionic-array-ii,6,amazon;bloomberg;google;infosys;meta;microsoft
+153,Cat and Mouse,https://leetcode.com/problems/cat-and-mouse,5,amazon;bloomberg;google;microsoft;zip
+154,Count Different Palindromic Subsequences,https://leetcode.com/problems/count-different-palindromic-subsequences,5,amazon;google;linkedin;uber;walmart-labs
+155,Count of Smaller Numbers After Self,https://leetcode.com/problems/count-of-smaller-numbers-after-self,5,amazon;bloomberg;google;meta;microsoft
+156,Count Subarrays With Score Less Than K,https://leetcode.com/problems/count-subarrays-with-score-less-than-k,5,amazon;google;meta;microsoft;pinterest
+157,Count the Number of Arrays with K Matching Adjacent Elements,https://leetcode.com/problems/count-the-number-of-arrays-with-k-matching-adjacent-elements,5,amazon;bloomberg;google;meta;phonepe
+158,Count the Number of Powerful Integers,https://leetcode.com/problems/count-the-number-of-powerful-integers,5,google;hashedin;jd;meta;sprinklr
+159,Couples Holding Hands,https://leetcode.com/problems/couples-holding-hands,5,bloomberg;citadel;google;microsoft;squarepoint-capital
+160,Find Building Where Alice and Bob Can Meet,https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet,5,amazon;bloomberg;google;infosys;meta
+161,Find K-th Smallest Pair Distance,https://leetcode.com/problems/find-k-th-smallest-pair-distance,5,amazon;bloomberg;google;microsoft;uber
+162,Find Minimum Time to Finish All Jobs,https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs,5,amazon;google;meta;microsoft;pinterest
+163,Find the Original Typed String II,https://leetcode.com/problems/find-the-original-typed-string-ii,5,amazon;bloomberg;google;meta;microsoft
+164,Get the Maximum Score,https://leetcode.com/problems/get-the-maximum-score,5,google;intuit;microsoft;mindtickle;oracle
+165,Kth Smallest Number in Multiplication Table,https://leetcode.com/problems/kth-smallest-number-in-multiplication-table,5,de-shaw;google;medianet;meta;uber
+166,Kth Smallest Product of Two Sorted Arrays,https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays,5,amazon;bloomberg;google;linkedin;microsoft
+167,Largest Color Value in a Directed Graph,https://leetcode.com/problems/largest-color-value-in-a-directed-graph,5,amazon;google;juspay;linkedin;meta
+168,Last Substring in Lexicographical Order,https://leetcode.com/problems/last-substring-in-lexicographical-order,5,amazon;ibm;mathworks;microsoft;qualcomm
+169,Length of Longest V-Shaped Diagonal Segment,https://leetcode.com/problems/length-of-longest-v-shaped-diagonal-segment,5,amazon;google;microsoft;roblox;visa
+170,Lexicographically Smallest Generated String,https://leetcode.com/problems/lexicographically-smallest-generated-string,5,amazon;barclays;google;microsoft;tiktok
+171,Longest Happy Prefix,https://leetcode.com/problems/longest-happy-prefix,5,amazon;bloomberg;google;meta;microsoft
+172,Longest Path With Different Adjacent Characters,https://leetcode.com/problems/longest-path-with-different-adjacent-characters,5,amazon;hrt;microsoft;target;uber
+173,Max Dot Product of Two Subsequences,https://leetcode.com/problems/max-dot-product-of-two-subsequences,5,amazon;bloomberg;google;meta;microsoft
+174,Maximize Subarrays After Removing One Conflicting Pair,https://leetcode.com/problems/maximize-subarrays-after-removing-one-conflicting-pair,5,amazon;bloomberg;google;linkedin;microsoft
+175,Maximum Employees to Be Invited to a Meeting,https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting,5,amazon;google;microsoft;nutanix;oracle
+176,Maximum Fruits Harvested After at Most K Steps,https://leetcode.com/problems/maximum-fruits-harvested-after-at-most-k-steps,5,amazon;google;kla;microsoft;mishipay
+177,Maximum Number of Non-overlapping Palindrome Substrings,https://leetcode.com/problems/maximum-number-of-non-overlapping-palindrome-substrings,5,linkedin;microsoft;oracle;salesforce;sofi
+178,Maximum Number of Tasks You Can Assign,https://leetcode.com/problems/maximum-number-of-tasks-you-can-assign,5,amazon;bloomberg;google;meta;walmart-labs
+179,Maximum Path Quality of a Graph,https://leetcode.com/problems/maximum-path-quality-of-a-graph,5,apple;doordash;google;salesforce;sap
+180,Maximum Sum BST in Binary Tree,https://leetcode.com/problems/maximum-sum-bst-in-binary-tree,5,amazon;bloomberg;google;meta;microsoft
+181,Minimum Initial Energy to Finish Tasks,https://leetcode.com/problems/minimum-initial-energy-to-finish-tasks,5,akuna-capital;amazon;goldman-sachs;google;microsoft
+182,Minimum Number of K Consecutive Bit Flips,https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips,5,amazon;bloomberg;google;meta;microsoft
+183,Minimum Number of Moves to Make Palindrome,https://leetcode.com/problems/minimum-number-of-moves-to-make-palindrome,5,amazon;goldman-sachs;ibm;microsoft;rubrik
+184,Minimum One Bit Operations to Make Integers Zero,https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero,5,bloomberg;expedia;google;oracle;servicenow
+185,Minimum Replacements to Sort the Array,https://leetcode.com/problems/minimum-replacements-to-sort-the-array,5,expedia;google;moveworks;paypal;zscaler
+186,Minimum Total Distance Traveled,https://leetcode.com/problems/minimum-total-distance-traveled,5,amazon;bloomberg;google;infosys;microsoft
+187,Minimum Window Subsequence,https://leetcode.com/problems/minimum-window-subsequence,5,airbnb;ebay;google;meta;salesforce
+188,Non-negative Integers without Consecutive Ones,https://leetcode.com/problems/non-negative-integers-without-consecutive-ones,5,amazon;bloomberg;google;microsoft;pocket-gems
+189,Race Car,https://leetcode.com/problems/race-car,5,amazon;anduril;google;meta;turing
+190,Range Module,https://leetcode.com/problems/range-module,5,amazon;coupang;google;machine-zone;meta
+191,Read N Characters Given read4 II - Call Multiple Times,https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times,5,apple;bloomberg;google;lyft;meta
+192,Recover a Tree From Preorder Traversal,https://leetcode.com/problems/recover-a-tree-from-preorder-traversal,5,amazon;bloomberg;google;meta;microsoft
+193,Replace Non-Coprime Numbers in Array,https://leetcode.com/problems/replace-non-coprime-numbers-in-array,5,amazon;bloomberg;google;microsoft;uber
+194,Shortest Common Supersequence,https://leetcode.com/problems/shortest-common-supersequence,5,amazon;bloomberg;google;meta;microsoft
+195,Similar String Groups,https://leetcode.com/problems/similar-string-groups,5,amazon;apple;doordash;google;meta
+196,Sort Items by Groups Respecting Dependencies,https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies,5,amazon;bloomberg;citadel;google;meta
+197,Split Message Based on Limit,https://leetcode.com/problems/split-message-based-on-limit,5,amazon;databricks;faire;tiktok;uber
+198,String Compression II,https://leetcode.com/problems/string-compression-ii,5,amazon;github;google;microsoft;toptal
+199,Sum of Distances in Tree,https://leetcode.com/problems/sum-of-distances-in-tree,5,amazon;google;meta;microsoft;phonepe
+200,Sum of k-Mirror Numbers,https://leetcode.com/problems/sum-of-k-mirror-numbers,5,bloomberg;cisco;google;meta;microsoft
+201,Super Egg Drop,https://leetcode.com/problems/super-egg-drop,5,amazon;bloomberg;google;microsoft;tiktok
+202,Trips and Users,https://leetcode.com/problems/trips-and-users,5,amazon;bloomberg;google;microsoft;uber
+203,Allocate Mailboxes,https://leetcode.com/problems/allocate-mailboxes,4,amazon;bloomberg;goldman-sachs;google
+204,Arithmetic Slices II - Subsequence,https://leetcode.com/problems/arithmetic-slices-ii-subsequence,4,amazon;baidu;bloomberg;google
+205,Check If It Is a Good Array,https://leetcode.com/problems/check-if-it-is-a-good-array,4,dropbox;google;microsoft;nokia
+206,Count Integers in Intervals,https://leetcode.com/problems/count-integers-in-intervals,4,databricks;google;linkedin;uber
+207,Count of Range Sum,https://leetcode.com/problems/count-of-range-sum,4,amazon;google;meta;oracle
+208,Count Paths That Can Form a Palindrome in a Tree,https://leetcode.com/problems/count-paths-that-can-form-a-palindrome-in-a-tree,4,google;thoughtspot;uber;weride
+209,Count Prefix and Suffix Pairs II,https://leetcode.com/problems/count-prefix-and-suffix-pairs-ii,4,autodesk;capital-one;samsung;uber
+210,Count the Number of Ideal Arrays,https://leetcode.com/problems/count-the-number-of-ideal-arrays,4,amazon;google;infosys;microsoft
+211,Count the Number of Inversions,https://leetcode.com/problems/count-the-number-of-inversions,4,amazon;google;microsoft;salesforce
+212,Course Schedule III,https://leetcode.com/problems/course-schedule-iii,4,amazon;meta;salesforce;works-applications
+213,Divide an Array Into Subarrays With Minimum Cost II,https://leetcode.com/problems/divide-an-array-into-subarrays-with-minimum-cost-ii,4,amazon;american-express;google;jio
+214,Escape the Spreading Fire,https://leetcode.com/problems/escape-the-spreading-fire,4,amazon;google;snapchat;uber
+215,Find Maximum Non-decreasing Array Length,https://leetcode.com/problems/find-maximum-non-decreasing-array-length,4,amazon;google;medianet;tiktok
+216,Find Minimum in Rotated Sorted Array II,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii,4,amazon;google;meta;microsoft
+217,Find the Maximum Sum of Node Values,https://leetcode.com/problems/find-the-maximum-sum-of-node-values,4,blackrock;deutsche-bank;google;meta
+218,Find the Minimum Area to Cover All Ones II,https://leetcode.com/problems/find-the-minimum-area-to-cover-all-ones-ii,4,amazon;google;microsoft;salesforce
+219,K Inverse Pairs Array,https://leetcode.com/problems/k-inverse-pairs-array,4,google;meta;microsoft;works-applications
+220,Last Day Where You Can Still Cross,https://leetcode.com/problems/last-day-where-you-can-still-cross,4,amazon;atlassian;google;meta
+221,Longest Cycle in a Graph,https://leetcode.com/problems/longest-cycle-in-a-graph,4,amazon;google;juspay;phonepe
+222,Max Chunks To Make Sorted II,https://leetcode.com/problems/max-chunks-to-make-sorted-ii,4,amazon;bloomberg;google;salesforce
+223,Maximum Candies You Can Get from Boxes,https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes,4,airbnb;bloomberg;google;lyft
+224,Maximum Height by Stacking Cuboids,https://leetcode.com/problems/maximum-height-by-stacking-cuboids,4,amazon;google;meta;samsung
+225,Maximum Number of K-Divisible Components,https://leetcode.com/problems/maximum-number-of-k-divisible-components,4,amazon;google;infosys;microsoft
+226,Maximum Score Words Formed by Letters,https://leetcode.com/problems/maximum-score-words-formed-by-letters,4,amazon;bloomberg;google;meta
+227,Merge BSTs to Create Single BST,https://leetcode.com/problems/merge-bsts-to-create-single-bst,4,amazon;bloomberg;google;microsoft
+228,Minimum Cost Path with Teleportations,https://leetcode.com/problems/minimum-cost-path-with-teleportations,4,amazon;google;meta;visa
+229,Minimum Cost to Convert String II,https://leetcode.com/problems/minimum-cost-to-convert-string-ii,4,amazon;atlassian;google;microsoft
+230,Minimum Cost to Merge Stones,https://leetcode.com/problems/minimum-cost-to-merge-stones,4,amazon;de-shaw;google;microsoft
+231,Minimum Number of Days to Disconnect Island,https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island,4,amazon;argo-ai;bloomberg;google
+232,Minimum Number of Operations to Make Array Continuous,https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous,4,bloomberg;google;microsoft;uber
+233,Minimum Operations to Equalize Binary String,https://leetcode.com/problems/minimum-operations-to-equalize-binary-string,4,amazon;google;infosys;microsoft
+234,Minimum Operations to Make Array Elements Zero,https://leetcode.com/problems/minimum-operations-to-make-array-elements-zero,4,axis-bank;bloomberg;google;meta
+235,Minimum Operations to Make Array Equal to Target,https://leetcode.com/problems/minimum-operations-to-make-array-equal-to-target,4,amazon;bloomberg;google;microsoft
+236,Minimum Score After Removals on a Tree,https://leetcode.com/problems/minimum-score-after-removals-on-a-tree,4,amazon;google;meta;microsoft
+237,Minimum Time to Visit a Cell In a Grid,https://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid,4,amazon;atlassian;google;microsoft
+238,Number of Submatrices That Sum to Target,https://leetcode.com/problems/number-of-submatrices-that-sum-to-target,4,amazon;google;meta;snapchat
+239,Numbers At Most N Given Digit Set,https://leetcode.com/problems/numbers-at-most-n-given-digit-set,4,amazon;google;microsoft;tiktok
+240,Paths in Matrix Whose Sum Is Divisible by K,https://leetcode.com/problems/paths-in-matrix-whose-sum-is-divisible-by-k,4,amazon;apple;google;microsoft
+241,Rearrange String k Distance Apart,https://leetcode.com/problems/rearrange-string-k-distance-apart,4,amazon;google;tiktok;zomato
+242,Remove Max Number of Edges to Keep Graph Fully Traversable,https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable,4,de-shaw;google;meta;uber
+243,Shortest Path Visiting All Nodes,https://leetcode.com/problems/shortest-path-visiting-all-nodes,4,amazon;google;meta;microsoft
+244,Stickers to Spell Word,https://leetcode.com/problems/stickers-to-spell-word,4,google;ixl;meta;tiktok
+245,Stream of Characters,https://leetcode.com/problems/stream-of-characters,4,amazon;google;jane-street;meta
+246,Subarray With Elements Greater Than Varying Threshold,https://leetcode.com/problems/subarray-with-elements-greater-than-varying-threshold,4,amazon;google;instabase;tiktok
+247,Sum of Prefix Scores of Strings,https://leetcode.com/problems/sum-of-prefix-scores-of-strings,4,amazon;bloomberg;boeing;google
+248,The Earliest and Latest Rounds Where Players Compete,https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete,4,amazon;bloomberg;google;meta
+249,Threshold Majority Queries,https://leetcode.com/problems/threshold-majority-queries,4,adobe;amazon;google;meta
+250,Valid Arrangement of Pairs,https://leetcode.com/problems/valid-arrangement-of-pairs,4,amazon;goldman-sachs;google;snapchat
+251,Word Abbreviation,https://leetcode.com/problems/word-abbreviation,4,amazon;applied-intuition;google;snapchat
+252,Apply Operations to Maximize Frequency Score,https://leetcode.com/problems/apply-operations-to-maximize-frequency-score,3,deutsche-bank;google;phonepe
+253,Basic Calculator IV,https://leetcode.com/problems/basic-calculator-iv,3,google;intuit;roblox
+254,Bricks Falling When Hit,https://leetcode.com/problems/bricks-falling-when-hit,3,google;phonepe;snapchat
+255,Car Fleet II,https://leetcode.com/problems/car-fleet-ii,3,amazon;google;microsoft
+256,Chalkboard XOR Game,https://leetcode.com/problems/chalkboard-xor-game,3,garena;google;hashedin
+257,Check if the Rectangle Corner Is Reachable,https://leetcode.com/problems/check-if-the-rectangle-corner-is-reachable,3,amazon;google;uber
+258,Closest Binary Search Tree Value II,https://leetcode.com/problems/closest-binary-search-tree-value-ii,3,amazon;google;linkedin
+259,Closest Subsequence Sum,https://leetcode.com/problems/closest-subsequence-sum,3,google;lti;sprinklr
+260,Concatenated Words,https://leetcode.com/problems/concatenated-words,3,amazon;ebay;tiktok
+261,Contain Virus,https://leetcode.com/problems/contain-virus,3,bloomberg;flipkart;google
+262,Count All Valid Pickup and Delivery Options,https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options,3,acko;doordash;google
+263,Count Good Triplets in an Array,https://leetcode.com/problems/count-good-triplets-in-an-array,3,bloomberg;google;walmart-labs
+264,Count Subarrays With Median K,https://leetcode.com/problems/count-subarrays-with-median-k,3,amazon;google;salesforce
+265,Count the Number of Incremovable Subarrays II,https://leetcode.com/problems/count-the-number-of-incremovable-subarrays-ii,3,apple;de-shaw;ibm
+266,Count Unique Characters of All Substrings of a Given String,https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string,3,amazon;forusall;microsoft
+267,Encrypt and Decrypt Strings,https://leetcode.com/problems/encrypt-and-decrypt-strings,3,amazon;duolingo;google
+268,Erect the Fence,https://leetcode.com/problems/erect-the-fence,3,amazon;google;meesho
+269,Escape a Large Maze,https://leetcode.com/problems/escape-a-large-maze,3,amazon;google;uipath
+270,Falling Squares,https://leetcode.com/problems/falling-squares,3,amazon;square;uber
+271,Fancy Sequence,https://leetcode.com/problems/fancy-sequence,3,amazon;bloomberg;google
+272,Final Array State After K Multiplication Operations II,https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-ii,3,amazon;google;meta
+273,Find All People With Secret,https://leetcode.com/problems/find-all-people-with-secret,3,amazon;google;uber
+274,Find Beautiful Indices in the Given Array II,https://leetcode.com/problems/find-beautiful-indices-in-the-given-array-ii,3,google;palantir;phonepe
+275,Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree,https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree,3,amazon;google;uber
+276,Find Minimum Diameter After Merging Two Trees,https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees,3,google;microsoft;servicenow
+277,Find the K-Sum of an Array,https://leetcode.com/problems/find-the-k-sum-of-an-array,3,amazon;google;hubspot
+278,Find the K-th Character in String Game II,https://leetcode.com/problems/find-the-k-th-character-in-string-game-ii,3,amazon;bloomberg;google
+279,Find the Number of Ways to Place People II,https://leetcode.com/problems/find-the-number-of-ways-to-place-people-ii,3,google;meta;uber
+280,Find the Shortest Superstring,https://leetcode.com/problems/find-the-shortest-superstring,3,de-shaw;google;meta
+281,Freedom Trail,https://leetcode.com/problems/freedom-trail,3,google;phonepe;uber
+282,Height of Binary Tree After Subtree Removal Queries,https://leetcode.com/problems/height-of-binary-tree-after-subtree-removal-queries,3,google;meta;snowflake
+283,Jump Game IV,https://leetcode.com/problems/jump-game-iv,3,amazon;google;meta
+284,Length of the Longest Valid Substring,https://leetcode.com/problems/length-of-the-longest-valid-substring,3,amazon;google;meta
+285,Longest Subsequence Repeated k Times,https://leetcode.com/problems/longest-subsequence-repeated-k-times,3,amazon;google;meta
+286,Make Array Non-decreasing or Non-increasing,https://leetcode.com/problems/make-array-non-decreasing-or-non-increasing,3,google;oracle;vmware
+287,Manhattan Distances of All Arrangements of Pieces,https://leetcode.com/problems/manhattan-distances-of-all-arrangements-of-pieces,3,amazon;google;rubrik
+288,Max Sum of Rectangle No Larger Than K,https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k,3,amazon;bloomberg;google
+289,Maximize Spanning Tree Stability with Upgrades,https://leetcode.com/problems/maximize-spanning-tree-stability-with-upgrades,3,amazon;google;microsoft
+290,Maximum Frequency of an Element After Performing Operations II,https://leetcode.com/problems/maximum-frequency-of-an-element-after-performing-operations-ii,3,amazon;bloomberg;google
+291,Maximum Good People Based on Statements,https://leetcode.com/problems/maximum-good-people-based-on-statements,3,microsoft;oracle;tusimple
+292,Maximum Score From Grid Operations,https://leetcode.com/problems/maximum-score-from-grid-operations,3,amazon;google;hrt
+293,Maximum Students Taking Exam,https://leetcode.com/problems/maximum-students-taking-exam,3,google;microsoft;sap
+294,Maximum Sum of Subsequence With Non-adjacent Elements,https://leetcode.com/problems/maximum-sum-of-subsequence-with-non-adjacent-elements,3,google;infosys;meta
+295,Maximum Vacation Days,https://leetcode.com/problems/maximum-vacation-days,3,datadog;google;meta
+296,Maximum Walls Destroyed by Robots,https://leetcode.com/problems/maximum-walls-destroyed-by-robots,3,amazon;infosys;microsoft
+297,Minimum Adjacent Swaps for K Consecutive Ones,https://leetcode.com/problems/minimum-adjacent-swaps-for-k-consecutive-ones,3,google;microsoft;turing
+298,Minimum Cost to Hire K Workers,https://leetcode.com/problems/minimum-cost-to-hire-k-workers,3,amazon;google;microsoft
+299,Minimum Deletions to Make Array Divisible,https://leetcode.com/problems/minimum-deletions-to-make-array-divisible,3,amazon;google;linkedin
+300,Minimum Falling Path Sum II,https://leetcode.com/problems/minimum-falling-path-sum-ii,3,bloomberg;google;meta
+301,Minimum Interval to Include Each Query,https://leetcode.com/problems/minimum-interval-to-include-each-query,3,amazon;bloomberg;google
+302,Minimum Number of Visited Cells in a Grid,https://leetcode.com/problems/minimum-number-of-visited-cells-in-a-grid,3,de-shaw;huawei;worldquant
+303,Minimum Obstacle Removal to Reach Corner,https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner,3,amazon;bloomberg;google
+304,Minimum Pair Removal to Sort Array II,https://leetcode.com/problems/minimum-pair-removal-to-sort-array-ii,3,amazon;google;microsoft
+305,Minimum Space Wasted From Packaging,https://leetcode.com/problems/minimum-space-wasted-from-packaging,3,amazon;imc;two-sigma
+306,Minimum Swaps To Make Sequences Increasing,https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing,3,amazon;meta;microsoft
+307,Nth Magical Number,https://leetcode.com/problems/nth-magical-number,3,amazon;google;meta
+308,Number of Distinct Islands II,https://leetcode.com/problems/number-of-distinct-islands-ii,3,amazon;google;meta
+309,Number of Good Paths,https://leetcode.com/problems/number-of-good-paths,3,amazon;bloomberg;google
+310,Number of Pairs Satisfying Inequality,https://leetcode.com/problems/number-of-pairs-satisfying-inequality,3,amazon;google;meta
+311,Number of Possible Sets of Closing Branches,https://leetcode.com/problems/number-of-possible-sets-of-closing-branches,3,atlassian;meesho;ta-digital
+312,Number of Squareful Arrays,https://leetcode.com/problems/number-of-squareful-arrays,3,apple;google;microsoft
+313,Number of Ways to Divide a Long Corridor,https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor,3,bloomberg;microsoft;zomato
+314,Number of Ways to Wear Different Hats to Each Other,https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other,3,de-shaw;mindtickle;roblox
+315,Paint House III,https://leetcode.com/problems/paint-house-iii,3,google;linkedin;paypal
+316,Parallel Courses II,https://leetcode.com/problems/parallel-courses-ii,3,amazon;google;snowflake
+317,Parse Lisp Expression,https://leetcode.com/problems/parse-lisp-expression,3,affirm;attentive;google
+318,Perfect Rectangle,https://leetcode.com/problems/perfect-rectangle,3,amazon;google;meta
+319,Prefix and Suffix Search,https://leetcode.com/problems/prefix-and-suffix-search,3,google;meta;microsoft
+320,Random Pick with Blacklist,https://leetcode.com/problems/random-pick-with-blacklist,3,amazon;google;uber
+321,Rank Transform of a Matrix,https://leetcode.com/problems/rank-transform-of-a-matrix,3,citadel;google;meta
+322,Reachable Nodes In Subdivided Graph,https://leetcode.com/problems/reachable-nodes-in-subdivided-graph,3,amazon;phonepe;yugabyte
+323,Shortest Cycle in a Graph,https://leetcode.com/problems/shortest-cycle-in-a-graph,3,meta;phonepe;zomato
+324,Smallest Divisible Digit Product II,https://leetcode.com/problems/smallest-divisible-digit-product-ii,3,accenture;google;microsoft
+325,Smallest Good Base,https://leetcode.com/problems/smallest-good-base,3,amazon;google;microsoft
+326,String Transformation,https://leetcode.com/problems/string-transformation,3,google;mathworks;snowflake
+327,Student Attendance Record II,https://leetcode.com/problems/student-attendance-record-ii,3,bloomberg;google;sprinklr
+328,Sum of Perfect Square Ancestors,https://leetcode.com/problems/sum-of-perfect-square-ancestors,3,amazon;google;meesho
+329,Tiling a Rectangle with the Fewest Squares,https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares,3,amazon;bloomberg;google
+330,Time Taken to Cross the Door,https://leetcode.com/problems/time-taken-to-cross-the-door,3,amazon;google;salesforce
+331,Triples with Bitwise AND Equal To Zero,https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero,3,flipkart;microsoft;philips
+332,Valid Palindrome III,https://leetcode.com/problems/valid-palindrome-iii,3,amazon;meta;tiktok
+333,Verbal Arithmetic Puzzle,https://leetcode.com/problems/verbal-arithmetic-puzzle,3,atlassian;google;wells-fargo
+334,Add Edges to Make Degrees of All Nodes Even,https://leetcode.com/problems/add-edges-to-make-degrees-of-all-nodes-even,2,hrt;uber
+335,Amount of New Area Painted Each Day,https://leetcode.com/problems/amount-of-new-area-painted-each-day,2,google;uber
+336,Apply Operations to Maximize Score,https://leetcode.com/problems/apply-operations-to-maximize-score,2,google;meta
+337,Build Array Where You Can Find The Maximum Exactly K Comparisons,https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons,2,dunzo;google
+338,Check for Contradictions in Equations,https://leetcode.com/problems/check-for-contradictions-in-equations,2,amazon;uber
+339,Check if an Original String Exists Given Two Encoded Strings,https://leetcode.com/problems/check-if-an-original-string-exists-given-two-encoded-strings,2,bitgo;meta
+340,Check If Digits Are Equal in String After Operations II,https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-ii,2,adp;google
+341,Checking Existence of Edge Length Limited Paths,https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths,2,google;uber
+342,Checking Existence of Edge Length Limited Paths II,https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths-ii,2,google;oscar-health
+343,Constrained Subsequence Sum,https://leetcode.com/problems/constrained-subsequence-sum,2,akuna-capital;google
+344,Convert JSON String to Object,https://leetcode.com/problems/convert-json-string-to-object,2,mongodb;verizon
+345,Count Array Pairs Divisible by K,https://leetcode.com/problems/count-array-pairs-divisible-by-k,2,paypal;qualcomm
+346,Count Good Subarrays,https://leetcode.com/problems/count-good-subarrays,2,harness;microsoft
+347,Count Increasing Quadruplets,https://leetcode.com/problems/count-increasing-quadruplets,2,deutsche-bank;sap
+348,Count Non-Decreasing Subarrays After K Operations,https://leetcode.com/problems/count-non-decreasing-subarrays-after-k-operations,2,google;microsoft
+349,Count Number of Balanced Permutations,https://leetcode.com/problems/count-number-of-balanced-permutations,2,google;meta
+350,Count Number of Trapezoids II,https://leetcode.com/problems/count-number-of-trapezoids-ii,2,google;meta
+351,Count of Integers,https://leetcode.com/problems/count-of-integers,2,cisco;goldman-sachs
+352,Count Sequences to K,https://leetcode.com/problems/count-sequences-to-k,2,google;linkedin
+353,Count Stepping Numbers in Range,https://leetcode.com/problems/count-stepping-numbers-in-range,2,amazon;google
+354,Create Sorted Array through Instructions,https://leetcode.com/problems/create-sorted-array-through-instructions,2,akuna-capital;google
+355,Cut Off Trees for Golf Event,https://leetcode.com/problems/cut-off-trees-for-golf-event,2,amazon;flipkart
+356,Data Stream as Disjoint Intervals,https://leetcode.com/problems/data-stream-as-disjoint-intervals,2,amazon;google
+357,Decode Ways II,https://leetcode.com/problems/decode-ways-ii,2,meta;phonepe
+358,Delete Columns to Make Sorted III,https://leetcode.com/problems/delete-columns-to-make-sorted-iii,2,amazon;google
+359,Design Graph With Shortest Path Calculator,https://leetcode.com/problems/design-graph-with-shortest-path-calculator,2,nike;samsung
+360,Design Movie Rental System,https://leetcode.com/problems/design-movie-rental-system,2,amazon;flipkart
+361,Difference Between Maximum and Minimum Price Sum,https://leetcode.com/problems/difference-between-maximum-and-minimum-price-sum,2,directi;medianet
+362,Dinner Plate Stacks,https://leetcode.com/problems/dinner-plate-stacks,2,amazon;google
+363,Distance to a Cycle in Undirected Graph,https://leetcode.com/problems/distance-to-a-cycle-in-undirected-graph,2,microsoft;oracle
+364,Distinct Subsequences II,https://leetcode.com/problems/distinct-subsequences-ii,2,amazon;google
+365,Distribute Candies Among Children III,https://leetcode.com/problems/distribute-candies-among-children-iii,2,amazon;rubrik
+366,Distribute Elements Into Two Arrays II,https://leetcode.com/problems/distribute-elements-into-two-arrays-ii,2,autodesk;capital-one
+367,Earliest Second to Mark Indices II,https://leetcode.com/problems/earliest-second-to-mark-indices-ii,2,google;mathworks
+368,Equal Rational Numbers,https://leetcode.com/problems/equal-rational-numbers,2,google;microsoft
+369,Equal Sum Grid Partition II,https://leetcode.com/problems/equal-sum-grid-partition-ii,2,google;microsoft
+370,Find All Good Strings,https://leetcode.com/problems/find-all-good-strings,2,dunzo;google
+371,Find All Possible Stable Binary Arrays II,https://leetcode.com/problems/find-all-possible-stable-binary-arrays-ii,2,amazon;ibm
+372,Find Edges in Shortest Paths,https://leetcode.com/problems/find-edges-in-shortest-paths,2,doordash;weride
+373,Find Sum of Array Product of Magical Sequences,https://leetcode.com/problems/find-sum-of-array-product-of-magical-sequences,2,infosys;meta
+374,Find the Count of Good Integers,https://leetcode.com/problems/find-the-count-of-good-integers,2,google;meta
+375,Find the Count of Monotonic Pairs I,https://leetcode.com/problems/find-the-count-of-monotonic-pairs-i,2,arcesium;google
+376,Find the Kth Smallest Sum of a Matrix With Sorted Rows,https://leetcode.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows,2,amazon;meta
+377,Find the Largest Palindrome Divisible by K,https://leetcode.com/problems/find-the-largest-palindrome-divisible-by-k,2,amazon;google
+378,Find the Longest Valid Obstacle Course at Each Position,https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position,2,google;morgan-stanley
+379,Find the Maximum Number of Fruits Collected,https://leetcode.com/problems/find-the-maximum-number-of-fruits-collected,2,bloomberg;google
+380,Find the Median of the Uniqueness Array,https://leetcode.com/problems/find-the-median-of-the-uniqueness-array,2,amazon;microsoft
+381,Find the Number of Subarrays Where Boundary Elements Are Maximum,https://leetcode.com/problems/find-the-number-of-subarrays-where-boundary-elements-are-maximum,2,amazon;linkedin
+382,Find the Number of Subsequences With Equal GCD,https://leetcode.com/problems/find-the-number-of-subsequences-with-equal-gcd,2,google;infosys
+383,Find the Sum of the Power of All Subsequences,https://leetcode.com/problems/find-the-sum-of-the-power-of-all-subsequences,2,de-shaw;google
+384,Find X-Sum of All K-Long Subarrays II,https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-ii,2,bloomberg;google
+385,Frog Position After T Seconds,https://leetcode.com/problems/frog-position-after-t-seconds,2,google;inmobi
+386,K-Similar Strings,https://leetcode.com/problems/k-similar-strings,2,doordash;google
+387,Kth Ancestor of a Tree Node,https://leetcode.com/problems/kth-ancestor-of-a-tree-node,2,amazon;google
+388,Largest Component Size by Common Factor,https://leetcode.com/problems/largest-component-size-by-common-factor,2,google;microsoft
+389,Largest Multiple of Three,https://leetcode.com/problems/largest-multiple-of-three,2,amazon;microsoft
+390,Lexicographically Smallest Beautiful String,https://leetcode.com/problems/lexicographically-smallest-beautiful-string,2,amazon;google
+391,Lexicographically Smallest String After Deleting Duplicate Characters,https://leetcode.com/problems/lexicographically-smallest-string-after-deleting-duplicate-characters,2,meta;paytm
+392,Longest Balanced Subarray II,https://leetcode.com/problems/longest-balanced-subarray-ii,2,amazon;google
+393,Make Array Empty,https://leetcode.com/problems/make-array-empty,2,google;zepto
+394,Make the XOR of All Segments Equal to Zero,https://leetcode.com/problems/make-the-xor-of-all-segments-equal-to-zero,2,google;medianet
+395,Maximize Cyclic Partition Score,https://leetcode.com/problems/maximize-cyclic-partition-score,2,amazon;google
+396,Maximize Subarray Sum After Removing All Occurrences of One Element,https://leetcode.com/problems/maximize-subarray-sum-after-removing-all-occurrences-of-one-element,2,google;rubrik
+397,Maximize the Distance Between Points on a Square,https://leetcode.com/problems/maximize-the-distance-between-points-on-a-square,2,bloomberg;google
+398,Maximize the Minimum Game Score,https://leetcode.com/problems/maximize-the-minimum-game-score,2,amazon;infosys
+399,Maximize the Minimum Powered City,https://leetcode.com/problems/maximize-the-minimum-powered-city,2,amazon;google
+400,Maximize the Number of Partitions After Operations,https://leetcode.com/problems/maximize-the-number-of-partitions-after-operations,2,hilabs;thoughtworks
+401,Maximize the Number of Target Nodes After Connecting Trees II,https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii,2,google;jio
+402,Maximum Area Rectangle With Point Constraints II,https://leetcode.com/problems/maximum-area-rectangle-with-point-constraints-ii,2,google;ukg
+403,Maximum Number of Robots Within Budget,https://leetcode.com/problems/maximum-number-of-robots-within-budget,2,amazon;inmobi
+404,Maximum Number of Ways to Partition an Array,https://leetcode.com/problems/maximum-number-of-ways-to-partition-an-array,2,google;salesforce
+405,Maximum Partition Factor,https://leetcode.com/problems/maximum-partition-factor,2,gameskraft;google
+406,Maximum Profit from Trading Stocks with Discounts,https://leetcode.com/problems/maximum-profit-from-trading-stocks-with-discounts,2,google;meta
+407,Maximum Score of Non-overlapping Intervals,https://leetcode.com/problems/maximum-score-of-non-overlapping-intervals,2,amazon;sprinklr
+408,Maximum Segment Sum After Removals,https://leetcode.com/problems/maximum-segment-sum-after-removals,2,infosys;medianet
+409,Maximum Spending After Buying Items,https://leetcode.com/problems/maximum-spending-after-buying-items,2,tiktok;zomato
+410,Maximum Strength of K Disjoint Subarrays,https://leetcode.com/problems/maximum-strength-of-k-disjoint-subarrays,2,amazon;de-shaw
+411,Maximum XOR of Two Non-Overlapping Subtrees,https://leetcode.com/problems/maximum-xor-of-two-non-overlapping-subtrees,2,directi;medianet
+412,Median Employee Salary,https://leetcode.com/problems/median-employee-salary,2,amazon;google
+413,Minimize Malware Spread II,https://leetcode.com/problems/minimize-malware-spread-ii,2,dropbox;uber
+414,Minimize Max Distance to Gas Station,https://leetcode.com/problems/minimize-max-distance-to-gas-station,2,amazon;google
+415,Minimum Cost Good Caption,https://leetcode.com/problems/minimum-cost-good-caption,2,fractal-analytics;tiktok
+416,Minimum Cost to Equalize Array,https://leetcode.com/problems/minimum-cost-to-equalize-array,2,amazon;microsoft
+417,Minimum Degree of a Connected Trio in a Graph,https://leetcode.com/problems/minimum-degree-of-a-connected-trio-in-a-graph,2,amazon;godaddy
+418,Minimum Distance to Type a Word Using Two Fingers,https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers,2,google;microsoft
+419,Minimum Number of Operations to Make Arrays Similar,https://leetcode.com/problems/minimum-number-of-operations-to-make-arrays-similar,2,amazon;walmart-labs
+420,Minimum Operations to Make a Subsequence,https://leetcode.com/problems/minimum-operations-to-make-a-subsequence,2,amazon;google
+421,Minimum Operations to Make Character Frequencies Equal,https://leetcode.com/problems/minimum-operations-to-make-character-frequencies-equal,2,google;tiktok
+422,Minimum Unique Word Abbreviation,https://leetcode.com/problems/minimum-unique-word-abbreviation,2,amazon;google
+423,Number of Different Subsequences GCDs,https://leetcode.com/problems/number-of-different-subsequences-gcds,2,akuna-capital;infosys
+424,Number of Great Partitions,https://leetcode.com/problems/number-of-great-partitions,2,darwinbox;sprinklr
+425,Number of Increasing Paths in a Grid,https://leetcode.com/problems/number-of-increasing-paths-in-a-grid,2,adobe;microsoft
+426,Number of Music Playlists,https://leetcode.com/problems/number-of-music-playlists,2,coursera;oracle
+427,Number of Paths with Max Score,https://leetcode.com/problems/number-of-paths-with-max-score,2,amazon;samsung
+428,Number of Ships in a Rectangle,https://leetcode.com/problems/number-of-ships-in-a-rectangle,2,applied-intuition;bloomberg
+429,Number of Subarrays That Match a Pattern II,https://leetcode.com/problems/number-of-subarrays-that-match-a-pattern-ii,2,autodesk;thoughtworks
+430,Number of Transactions per Visit,https://leetcode.com/problems/number-of-transactions-per-visit,2,machine-zone;machinezone
+431,Number of Valid Move Combinations On Chessboard,https://leetcode.com/problems/number-of-valid-move-combinations-on-chessboard,2,google;paypal
+432,Number of Ways to Reorder Array to Get Same BST,https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst,2,de-shaw;google
+433,Number of Ways to Separate Numbers,https://leetcode.com/problems/number-of-ways-to-separate-numbers,2,amazon;walmart-labs
+434,Numbers With Repeated Digits,https://leetcode.com/problems/numbers-with-repeated-digits,2,google;jpmorgan
+435,Odd Even Jump,https://leetcode.com/problems/odd-even-jump,2,google;sprinklr
+436,Optimize Water Distribution in a Village,https://leetcode.com/problems/optimize-water-distribution-in-a-village,2,apple;google
+437,Orderly Queue,https://leetcode.com/problems/orderly-queue,2,amazon;bloomberg
+438,Paint House II,https://leetcode.com/problems/paint-house-ii,2,linkedin;meta
+439,Pizza With 3n Slices,https://leetcode.com/problems/pizza-with-3n-slices,2,amazon;google
+440,Process Restricted Friend Requests,https://leetcode.com/problems/process-restricted-friend-requests,2,google;uber
+441,Profitable Schemes,https://leetcode.com/problems/profitable-schemes,2,amazon;google
+442,Rectangle Area II,https://leetcode.com/problems/rectangle-area-ii,2,flipkart;google
+443,Reducing Dishes,https://leetcode.com/problems/reducing-dishes,2,google;microsoft
+444,Report Contiguous Dates,https://leetcode.com/problems/report-contiguous-dates,2,amazon;meta
+445,Restore The Array,https://leetcode.com/problems/restore-the-array,2,google;postman
+446,Second Minimum Time to Reach Destination,https://leetcode.com/problems/second-minimum-time-to-reach-destination,2,google;microsoft
+447,Self Crossing,https://leetcode.com/problems/self-crossing,2,bloomberg;zomato
+448,Separate Squares II,https://leetcode.com/problems/separate-squares-ii,2,amazon;google
+449,Smallest Substring With Identical Characters I,https://leetcode.com/problems/smallest-substring-with-identical-characters-i,2,google;salesforce
+450,Stone Game III,https://leetcode.com/problems/stone-game-iii,2,google;meta
+451,Sum of Beautiful Subsequences,https://leetcode.com/problems/sum-of-beautiful-subsequences,2,google;infosys
+452,Sum of Total Strength of Wizards,https://leetcode.com/problems/sum-of-total-strength-of-wizards,2,amazon;meta
+453,Super Washing Machines,https://leetcode.com/problems/super-washing-machines,2,amazon;google
+454,Tag Validator,https://leetcode.com/problems/tag-validator,2,faire;microsoft
+455,The Number of Good Subsets,https://leetcode.com/problems/the-number-of-good-subsets,2,lowe;medianet
+456,The Score of Students Solving Math Expression,https://leetcode.com/problems/the-score-of-students-solving-math-expression,2,flipkart;meta
+457,Total Appeal of A String,https://leetcode.com/problems/total-appeal-of-a-string,2,amazon;google
+458,Total Characters in String After Transformations II,https://leetcode.com/problems/total-characters-in-string-after-transformations-ii,2,google;meta
+459,Transform to Chessboard,https://leetcode.com/problems/transform-to-chessboard,2,citadel;google
+460,Viewers Turned Streamers,https://leetcode.com/problems/viewers-turned-streamers,2,google;phonepe
+461,XOR After Range Multiplication Queries II,https://leetcode.com/problems/xor-after-range-multiplication-queries-ii,2,amazon;infosys
+462,Abbreviating the Product of a Range,https://leetcode.com/problems/abbreviating-the-product-of-a-range,1,avalara
+463,Analyze Organization Hierarchy,https://leetcode.com/problems/analyze-organization-hierarchy,1,amazon
+464,Apply Operations on Array to Maximize Sum of Squares,https://leetcode.com/problems/apply-operations-on-array-to-maximize-sum-of-squares,1,sprinklr
+465,Best Position for a Service Centre,https://leetcode.com/problems/best-position-for-a-service-centre,1,citadel
+466,Booking Concert Tickets in Groups,https://leetcode.com/problems/booking-concert-tickets-in-groups,1,google
+467,Brace Expansion II,https://leetcode.com/problems/brace-expansion-ii,1,google
+468,Build a Matrix With Conditions,https://leetcode.com/problems/build-a-matrix-with-conditions,1,google
+469,Build Binary Expression Tree From Infix Expression,https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression,1,amazon
+470,Cat and Mouse II,https://leetcode.com/problems/cat-and-mouse-ii,1,google
+471,Check if DFS Strings Are Palindromes,https://leetcode.com/problems/check-if-dfs-strings-are-palindromes,1,google
+472,Check if Point Is Reachable,https://leetcode.com/problems/check-if-point-is-reachable,1,phonepe
+473,Check If String Is Transformable With Substring Sort Operations,https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations,1,google
+474,Check if There Is a Valid Parentheses String Path,https://leetcode.com/problems/check-if-there-is-a-valid-parentheses-string-path,1,google
+475,Choose Numbers From Two Arrays in Range,https://leetcode.com/problems/choose-numbers-from-two-arrays-in-range,1,adobe
+476,Closest Node to Path in Tree,https://leetcode.com/problems/closest-node-to-path-in-tree,1,google
+477,Closest Room,https://leetcode.com/problems/closest-room,1,amazon
+478,Coin Path,https://leetcode.com/problems/coin-path,1,google
+479,Concatenated Divisibility,https://leetcode.com/problems/concatenated-divisibility,1,meta
+480,Confusing Number II,https://leetcode.com/problems/confusing-number-ii,1,google
+481,Construct String with Minimum Cost,https://leetcode.com/problems/construct-string-with-minimum-cost,1,mitsogo
+482,Construct Target Array With Multiple Sums,https://leetcode.com/problems/construct-target-array-with-multiple-sums,1,quora
+483,Count Anagrams,https://leetcode.com/problems/count-anagrams,1,mathworks
+484,Count Beautiful Numbers,https://leetcode.com/problems/count-beautiful-numbers,1,google
+485,Count Beautiful Substrings II,https://leetcode.com/problems/count-beautiful-substrings-ii,1,amazon
+486,Count Complete Substrings,https://leetcode.com/problems/count-complete-substrings,1,meesho
+487,Count Fertile Pyramids in a Land,https://leetcode.com/problems/count-fertile-pyramids-in-a-land,1,google
+488,Count K-Reducible Numbers Less Than N,https://leetcode.com/problems/count-k-reducible-numbers-less-than-n,1,schneider-electric
+489,Count K-Subsequences of a String With Maximum Beauty,https://leetcode.com/problems/count-k-subsequences-of-a-string-with-maximum-beauty,1,google
+490,Count Non Decreasing Arrays With Given Digit Sums,https://leetcode.com/problems/count-non-decreasing-arrays-with-given-digit-sums,1,docusign
+491,Count Number of Special Subsequences,https://leetcode.com/problems/count-number-of-special-subsequences,1,amazon
+492,Count Pairs Of Nodes,https://leetcode.com/problems/count-pairs-of-nodes,1,amazon
+493,Count Pairs With XOR in a Range,https://leetcode.com/problems/count-pairs-with-xor-in-a-range,1,vimeo
+494,Count Routes to Climb a Rectangular Grid,https://leetcode.com/problems/count-routes-to-climb-a-rectangular-grid,1,microsoft
+495,Count Substrings Divisible By Last Digit,https://leetcode.com/problems/count-substrings-divisible-by-last-digit,1,google
+496,Count the Number of Good Partitions,https://leetcode.com/problems/count-the-number-of-good-partitions,1,google
+497,Count the Number of Houses at a Certain Distance II,https://leetcode.com/problems/count-the-number-of-houses-at-a-certain-distance-ii,1,oracle
+498,Count the Number of K-Big Indices,https://leetcode.com/problems/count-the-number-of-k-big-indices,1,amazon
+499,Count The Number of Winning Sequences,https://leetcode.com/problems/count-the-number-of-winning-sequences,1,google
+500,Count The Repetitions,https://leetcode.com/problems/count-the-repetitions,1,google
+501,Count Valid Paths in a Tree,https://leetcode.com/problems/count-valid-paths-in-a-tree,1,gameskraft
+502,Count Visited Nodes in a Directed Graph,https://leetcode.com/problems/count-visited-nodes-in-a-directed-graph,1,bny-mellon
+503,Count Vowels Permutation,https://leetcode.com/problems/count-vowels-permutation,1,mathworks
+504,Count Ways to Build Rooms in an Ant Colony,https://leetcode.com/problems/count-ways-to-build-rooms-in-an-ant-colony,1,adobe
+505,Count Ways to Distribute Candies,https://leetcode.com/problems/count-ways-to-distribute-candies,1,google
+506,Count Ways to Make Array With Product,https://leetcode.com/problems/count-ways-to-make-array-with-product,1,amazon
+507,Cracking the Safe,https://leetcode.com/problems/cracking-the-safe,1,google
+508,Create Components With Same Value,https://leetcode.com/problems/create-components-with-same-value,1,sprinklr
+509,Customers With Strictly Increasing Purchases,https://leetcode.com/problems/customers-with-strictly-increasing-purchases,1,amazon
+510,Cycle Length Queries in a Tree,https://leetcode.com/problems/cycle-length-queries-in-a-tree,1,arcesium
+511,Delivering Boxes from Storage to Ports,https://leetcode.com/problems/delivering-boxes-from-storage-to-ports,1,nutanix
+512,Design an Array Statistics Tracker,https://leetcode.com/problems/design-an-array-statistics-tracker,1,amazon
+513,Design Video Sharing Platform,https://leetcode.com/problems/design-video-sharing-platform,1,google
+514,Dice Roll Simulation,https://leetcode.com/problems/dice-roll-simulation,1,akuna-capital
+515,Digit Count in Range,https://leetcode.com/problems/digit-count-in-range,1,amazon
+516,Distinct Echo Substrings,https://leetcode.com/problems/distinct-echo-substrings,1,google
+517,Distribute Repeating Integers,https://leetcode.com/problems/distribute-repeating-integers,1,google
+518,Divide Array Into Increasing Sequences,https://leetcode.com/problems/divide-array-into-increasing-sequences,1,google
+519,Divide Chocolate,https://leetcode.com/problems/divide-chocolate,1,google
+520,Earliest Possible Day of Full Bloom,https://leetcode.com/problems/earliest-possible-day-of-full-bloom,1,visa
+521,Encode String with Shortest Length,https://leetcode.com/problems/encode-string-with-shortest-length,1,google
+522,Erect the Fence II,https://leetcode.com/problems/erect-the-fence-ii,1,google
+523,Find a Value of a Mysterious Function Closest to Target,https://leetcode.com/problems/find-a-value-of-a-mysterious-function-closest-to-target,1,american-express
+524,Find Array Given Subset Sums,https://leetcode.com/problems/find-array-given-subset-sums,1,mindtickle
+525,Find Cumulative Salary of an Employee,https://leetcode.com/problems/find-cumulative-salary-of-an-employee,1,amazon
+526,Find Longest Awesome Substring,https://leetcode.com/problems/find-longest-awesome-substring,1,directi
+527,Find Longest Self-Contained Substring,https://leetcode.com/problems/find-longest-self-contained-substring,1,amazon
+528,Find Median Given Frequency of Numbers,https://leetcode.com/problems/find-median-given-frequency-of-numbers,1,pinterest
+529,Find Nth Smallest Integer With K One Bits,https://leetcode.com/problems/find-nth-smallest-integer-with-k-one-bits,1,google
+530,Find Number of Coins to Place in Tree Nodes,https://leetcode.com/problems/find-number-of-coins-to-place-in-tree-nodes,1,amazon
+531,Find Number of Ways to Reach the K-th Stair,https://leetcode.com/problems/find-number-of-ways-to-reach-the-k-th-stair,1,amazon
+532,Find Pattern in Infinite Stream II,https://leetcode.com/problems/find-pattern-in-infinite-stream-ii,1,uber
+533,Find Products of Elements of Big Array,https://leetcode.com/problems/find-products-of-elements-of-big-array,1,ibm
+534,Find Shortest Path with K Hops,https://leetcode.com/problems/find-shortest-path-with-k-hops,1,goldman-sachs
+535,Find Subarray With Bitwise OR Closest to K,https://leetcode.com/problems/find-subarray-with-bitwise-or-closest-to-k,1,salesforce
+536,Find Substring With Given Hash Value,https://leetcode.com/problems/find-substring-with-given-hash-value,1,google
+537,Find the Count of Monotonic Pairs II,https://leetcode.com/problems/find-the-count-of-monotonic-pairs-ii,1,bny-mellon
+538,Find the Last Marked Nodes in Tree,https://leetcode.com/problems/find-the-last-marked-nodes-in-tree,1,salesforce
+539,Find the Maximum Length of a Good Subsequence II,https://leetcode.com/problems/find-the-maximum-length-of-a-good-subsequence-ii,1,snowflake
+540,Find the Maximum Sequence Value of Array,https://leetcode.com/problems/find-the-maximum-sequence-value-of-array,1,google
+541,Find the Minimum Cost Array Permutation,https://leetcode.com/problems/find-the-minimum-cost-array-permutation,1,google
+542,Find the Number of Possible Ways for an Event,https://leetcode.com/problems/find-the-number-of-possible-ways-for-an-event,1,amazon
+543,Find the Occurrence of First Almost Equal Substring,https://leetcode.com/problems/find-the-occurrence-of-first-almost-equal-substring,1,google
+544,Find the String with LCP,https://leetcode.com/problems/find-the-string-with-lcp,1,google
+545,Find the Subtasks That Did Not Execute,https://leetcode.com/problems/find-the-subtasks-that-did-not-execute,1,google
+546,Find the Sum of Subsequence Powers,https://leetcode.com/problems/find-the-sum-of-subsequence-powers,1,rubrik
+547,Find Weighted Median Node in Tree,https://leetcode.com/problems/find-weighted-median-node-in-tree,1,google
+548,Find X Value of Array II,https://leetcode.com/problems/find-x-value-of-array-ii,1,rubrik
+549,Find XOR Sum of All Pairs Bitwise AND,https://leetcode.com/problems/find-xor-sum-of-all-pairs-bitwise-and,1,mobisy
+550,Finding MK Average,https://leetcode.com/problems/finding-mk-average,1,google
+551,Finding the Topic of Each Post,https://leetcode.com/problems/finding-the-topic-of-each-post,1,meta
+552,First and Last Call On the Same Day,https://leetcode.com/problems/first-and-last-call-on-the-same-day,1,amazon
+553,Form Largest Integer With Digits That Add up to Target,https://leetcode.com/problems/form-largest-integer-with-digits-that-add-up-to-target,1,google
+554,Frequencies of Shortest Supersequences,https://leetcode.com/problems/frequencies-of-shortest-supersequences,1,phonepe
+555,Game Play Analysis V,https://leetcode.com/problems/game-play-analysis-v,1,gsn-games
+556,GCD Sort of an Array,https://leetcode.com/problems/gcd-sort-of-an-array,1,amazon
+557,Get the Second Most Recent Activity,https://leetcode.com/problems/get-the-second-most-recent-activity,1,microsoft
+558,Good Subsequence Queries,https://leetcode.com/problems/good-subsequence-queries,1,infosys
+559,Graph Connectivity With Threshold,https://leetcode.com/problems/graph-connectivity-with-threshold,1,uber
+560,Grid Illumination,https://leetcode.com/problems/grid-illumination,1,dropbox
+561,Groups of Strings,https://leetcode.com/problems/groups-of-strings,1,lowe
+562,Handling Sum Queries After Update,https://leetcode.com/problems/handling-sum-queries-after-update,1,trilogy
+563,Handshakes That Don't Cross,https://leetcode.com/problems/handshakes-that-dont-cross,1,amazon
+564,Hopper Company Queries I,https://leetcode.com/problems/hopper-company-queries-i,1,uber
+565,Hopper Company Queries II,https://leetcode.com/problems/hopper-company-queries-ii,1,uber
+566,Hopper Company Queries III,https://leetcode.com/problems/hopper-company-queries-iii,1,uber
+567,Jump Game V,https://leetcode.com/problems/jump-game-v,1,google
+568,K Empty Slots,https://leetcode.com/problems/k-empty-slots,1,google
+569,Kth Smallest Instructions,https://leetcode.com/problems/kth-smallest-instructions,1,amazon
+570,Largest Palindrome Product,https://leetcode.com/problems/largest-palindrome-product,1,yahoo
+571,Least Operators to Express Number,https://leetcode.com/problems/least-operators-to-express-number,1,snapchat
+572,Leetcodify Friends Recommendations,https://leetcode.com/problems/leetcodify-friends-recommendations,1,spotify
+573,Leetcodify Similar Friends,https://leetcode.com/problems/leetcodify-similar-friends,1,spotify
+574,Longest Chunked Palindrome Decomposition,https://leetcode.com/problems/longest-chunked-palindrome-decomposition,1,google
+575,Longest Common Subpath,https://leetcode.com/problems/longest-common-subpath,1,amazon
+576,Longest Common Suffix Queries,https://leetcode.com/problems/longest-common-suffix-queries,1,google
+577,Longest Increasing Subsequence II,https://leetcode.com/problems/longest-increasing-subsequence-ii,1,google
+578,Longest Palindrome After Substring Concatenation II,https://leetcode.com/problems/longest-palindrome-after-substring-concatenation-ii,1,google
+579,Longest Special Path II,https://leetcode.com/problems/longest-special-path-ii,1,google
+580,Longest Substring of One Repeating Character,https://leetcode.com/problems/longest-substring-of-one-repeating-character,1,pickrr
+581,Longest Winning Streak,https://leetcode.com/problems/longest-winning-streak,1,amazon
+582,Make String Anti-palindrome,https://leetcode.com/problems/make-string-anti-palindrome,1,intuit
+583,Market Analysis II,https://leetcode.com/problems/market-analysis-ii,1,poshmark
+584,Match Substring After Replacement,https://leetcode.com/problems/match-substring-after-replacement,1,discord
+585,Max Value of Equation,https://leetcode.com/problems/max-value-of-equation,1,google
+586,Maximize Alternating Sum Using Swaps,https://leetcode.com/problems/maximize-alternating-sum-using-swaps,1,google
+587,Maximize Consecutive Elements in an Array After Modification,https://leetcode.com/problems/maximize-consecutive-elements-in-an-array-after-modification,1,google
+588,Maximize Count of Distinct Primes After Split,https://leetcode.com/problems/maximize-count-of-distinct-primes-after-split,1,google
+589,Maximize Fixed Points After Deletions,https://leetcode.com/problems/maximize-fixed-points-after-deletions,1,amazon
+590,Maximize Grid Happiness,https://leetcode.com/problems/maximize-grid-happiness,1,salesforce
+591,Maximize Items,https://leetcode.com/problems/maximize-items,1,hashedin
+592,Maximize Number of Nice Divisors,https://leetcode.com/problems/maximize-number-of-nice-divisors,1,microsoft
+593,Maximize Palindrome Length From Subsequences,https://leetcode.com/problems/maximize-palindrome-length-from-subsequences,1,goldman-sachs
+594,Maximize Score After N Operations,https://leetcode.com/problems/maximize-score-after-n-operations,1,sprinklr
+595,Maximize Subarray GCD Score,https://leetcode.com/problems/maximize-subarray-gcd-score,1,google
+596,Maximize Sum of Weights after Edge Removals,https://leetcode.com/problems/maximize-sum-of-weights-after-edge-removals,1,gameskraft
+597,Maximize the Beauty of the Garden,https://leetcode.com/problems/maximize-the-beauty-of-the-garden,1,amazon
+598,Maximize Value of Function in a Ball Passing Game,https://leetcode.com/problems/maximize-value-of-function-in-a-ball-passing-game,1,oracle
+599,Maximum AND Sum of Array,https://leetcode.com/problems/maximum-and-sum-of-array,1,google
+600,Maximum Average Subarray II,https://leetcode.com/problems/maximum-average-subarray-ii,1,google
+601,Maximum Balanced Subsequence Sum,https://leetcode.com/problems/maximum-balanced-subsequence-sum,1,amazon
+602,Maximum Bitwise AND After Increment Operations,https://leetcode.com/problems/maximum-bitwise-and-after-increment-operations,1,amazon
+603,Maximum Building Height,https://leetcode.com/problems/maximum-building-height,1,dataminr
+604,Maximum Deletions on a String,https://leetcode.com/problems/maximum-deletions-on-a-string,1,de-shaw
+605,Maximum Element-Sum of a Complete Subset of Indices,https://leetcode.com/problems/maximum-element-sum-of-a-complete-subset-of-indices,1,purplle
+606,Maximum Equal Frequency,https://leetcode.com/problems/maximum-equal-frequency,1,american-express
+607,Maximum Frequency Score of a Subarray,https://leetcode.com/problems/maximum-frequency-score-of-a-subarray,1,paypal
+608,Maximum GCD-Sum of a Subarray,https://leetcode.com/problems/maximum-gcd-sum-of-a-subarray,1,thoughtworks
+609,Maximum Genetic Difference Query,https://leetcode.com/problems/maximum-genetic-difference-query,1,medianet
+610,Maximum Good Subtree Score,https://leetcode.com/problems/maximum-good-subtree-score,1,infosys
+611,Maximum Number of Achievable Transfer Requests,https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests,1,amazon
+612,Maximum Number of Books You Can Take,https://leetcode.com/problems/maximum-number-of-books-you-can-take,1,amazon
+613,Maximum Number of Darts Inside of a Circular Dartboard,https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard,1,meta
+614,Maximum Number of Groups Getting Fresh Donuts,https://leetcode.com/problems/maximum-number-of-groups-getting-fresh-donuts,1,google
+615,Maximum Number of Groups With Increasing Length,https://leetcode.com/problems/maximum-number-of-groups-with-increasing-length,1,amazon
+616,Maximum Number of Intersections on the Chart,https://leetcode.com/problems/maximum-number-of-intersections-on-the-chart,1,microsoft
+617,Maximum Number of Moves to Kill All Pawns,https://leetcode.com/problems/maximum-number-of-moves-to-kill-all-pawns,1,google
+618,Maximum Number of Non-Overlapping Substrings,https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings,1,amazon
+619,Maximum Number of Ones,https://leetcode.com/problems/maximum-number-of-ones,1,qualcomm
+620,Maximum Points After Collecting Coins From All Nodes,https://leetcode.com/problems/maximum-points-after-collecting-coins-from-all-nodes,1,de-shaw
+621,Maximum Profitable Triplets With Increasing Prices II,https://leetcode.com/problems/maximum-profitable-triplets-with-increasing-prices-ii,1,ibm
+622,Maximum Score from Performing Multiplication Operations,https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations,1,google
+623,Maximum Score of a Good Subarray,https://leetcode.com/problems/maximum-score-of-a-good-subarray,1,google
+624,Maximum Score of a Node Sequence,https://leetcode.com/problems/maximum-score-of-a-node-sequence,1,google
+625,Maximum Score Of Spliced Array,https://leetcode.com/problems/maximum-score-of-spliced-array,1,microsoft
+626,Maximum Strong Pair XOR II,https://leetcode.com/problems/maximum-strong-pair-xor-ii,1,zscaler
+627,Maximum Subgraph Score in a Tree,https://leetcode.com/problems/maximum-subgraph-score-in-a-tree,1,microsoft
+628,Maximum Sum of Alternating Subsequence With Distance at Least K,https://leetcode.com/problems/maximum-sum-of-alternating-subsequence-with-distance-at-least-k,1,visa
+629,Maximum Sum of Edge Values in a Graph,https://leetcode.com/problems/maximum-sum-of-edge-values-in-a-graph,1,bloomberg
+630,Maximum Total Beauty of the Gardens,https://leetcode.com/problems/maximum-total-beauty-of-the-gardens,1,intuit
+631,Maximum Total Reward Using Operations II,https://leetcode.com/problems/maximum-total-reward-using-operations-ii,1,mitsogo
+632,Maximum Value of K Coins From Piles,https://leetcode.com/problems/maximum-value-of-k-coins-from-piles,1,google
+633,Maximum XOR Score Subarray Queries,https://leetcode.com/problems/maximum-xor-score-subarray-queries,1,google
+634,Maximum XOR With an Element From Array,https://leetcode.com/problems/maximum-xor-with-an-element-from-array,1,google
+635,Memoize II,https://leetcode.com/problems/memoize-ii,1,google
+636,Merge Operations for Minimum Travel Time,https://leetcode.com/problems/merge-operations-for-minimum-travel-time,1,google
+637,Minimize Deviation in Array,https://leetcode.com/problems/minimize-deviation-in-array,1,samsung
+638,Minimize Maximum Value in a Grid,https://leetcode.com/problems/minimize-maximum-value-in-a-grid,1,google
+639,Minimize OR of Remaining Elements Using Operations,https://leetcode.com/problems/minimize-or-of-remaining-elements-using-operations,1,aon
+640,Minimize the Maximum Adjacent Element Difference,https://leetcode.com/problems/minimize-the-maximum-adjacent-element-difference,1,amazon
+641,Minimum Amount of Damage Dealt to Bob,https://leetcode.com/problems/minimum-amount-of-damage-dealt-to-bob,1,amazon
+642,Minimum Cost to Buy Apples II,https://leetcode.com/problems/minimum-cost-to-buy-apples-ii,1,amazon
+643,Minimum Cost to Change the Final Value of Expression,https://leetcode.com/problems/minimum-cost-to-change-the-final-value-of-expression,1,google
+644,Minimum Cost to Connect Two Groups of Points,https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points,1,google
+645,Minimum Cost to Partition a Binary String,https://leetcode.com/problems/minimum-cost-to-partition-a-binary-string,1,amazon
+646,Minimum Cost to Split an Array,https://leetcode.com/problems/minimum-cost-to-split-an-array,1,indeed
+647,Minimum Costs Using the Train Line,https://leetcode.com/problems/minimum-costs-using-the-train-line,1,citadel
+648,Minimum Edge Weight Equilibrium Queries in a Tree,https://leetcode.com/problems/minimum-edge-weight-equilibrium-queries-in-a-tree,1,sprinklr
+649,Minimum Flips in Binary Tree to Get Result,https://leetcode.com/problems/minimum-flips-in-binary-tree-to-get-result,1,google
+650,Minimum Incompatibility,https://leetcode.com/problems/minimum-incompatibility,1,microsoft
+651,Minimum Money Required Before Transactions,https://leetcode.com/problems/minimum-money-required-before-transactions,1,amazon
+652,Minimum Moves to Move a Box to Their Target Location,https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location,1,google
+653,Minimum Moves to Pick K Ones,https://leetcode.com/problems/minimum-moves-to-pick-k-ones,1,tiktok
+654,Minimum Moves to Reach Target in Grid,https://leetcode.com/problems/minimum-moves-to-reach-target-in-grid,1,bloomberg
+655,Minimum Moves to Reach Target with Rotations,https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations,1,kakao
+656,Minimum Number of Days to Eat N Oranges,https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges,1,google
+657,Minimum Number of Flips to Convert Binary Matrix to Zero Matrix,https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix,1,airbnb
+658,Minimum Number of Operations to Make String Sorted,https://leetcode.com/problems/minimum-number-of-operations-to-make-string-sorted,1,samsung
+659,Minimum Operations to Form Subsequence With Target Sum,https://leetcode.com/problems/minimum-operations-to-form-subsequence-with-target-sum,1,medianet
+660,Minimum Operations to Make Numbers Non-positive,https://leetcode.com/problems/minimum-operations-to-make-numbers-non-positive,1,citadel
+661,Minimum Operations to Make the Array K-Increasing,https://leetcode.com/problems/minimum-operations-to-make-the-array-k-increasing,1,amazon
+662,Minimum Operations to Remove Adjacent Ones in Matrix,https://leetcode.com/problems/minimum-operations-to-remove-adjacent-ones-in-matrix,1,amazon
+663,Minimum Possible Integer After at Most K Adjacent Swaps On Digits,https://leetcode.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits,1,hashedin
+664,Minimum Reverse Operations,https://leetcode.com/problems/minimum-reverse-operations,1,infosys
+665,Minimum Runes to Add to Cast Spell,https://leetcode.com/problems/minimum-runes-to-add-to-cast-spell,1,de-shaw
+666,Minimum Skips to Arrive at Meeting On Time,https://leetcode.com/problems/minimum-skips-to-arrive-at-meeting-on-time,1,google
+667,Minimum Stability Factor of Array,https://leetcode.com/problems/minimum-stability-factor-of-array,1,amazon
+668,Minimum Sum of Values by Dividing Array,https://leetcode.com/problems/minimum-sum-of-values-by-dividing-array,1,google
+669,Minimum Swaps to Avoid Forbidden Values,https://leetcode.com/problems/minimum-swaps-to-avoid-forbidden-values,1,amazon
+670,Minimum Time Takes to Reach Destination Without Drowning,https://leetcode.com/problems/minimum-time-takes-to-reach-destination-without-drowning,1,wix
+671,Minimum Time to Break Locks II,https://leetcode.com/problems/minimum-time-to-break-locks-ii,1,ivp
+672,Minimum Time to Build Blocks,https://leetcode.com/problems/minimum-time-to-build-blocks,1,google
+673,Minimum Time to Complete All Tasks,https://leetcode.com/problems/minimum-time-to-complete-all-tasks,1,google
+674,Minimum Time to Eat All Grains,https://leetcode.com/problems/minimum-time-to-eat-all-grains,1,confluent
+675,Minimum Time to Finish the Race,https://leetcode.com/problems/minimum-time-to-finish-the-race,1,google
+676,Minimum Time to Kill All Monsters,https://leetcode.com/problems/minimum-time-to-kill-all-monsters,1,trilogy
+677,Minimum Time to Make Array Sum At Most x,https://leetcode.com/problems/minimum-time-to-make-array-sum-at-most-x,1,jane-street
+678,Minimum Time to Remove All Cars Containing Illegal Goods,https://leetcode.com/problems/minimum-time-to-remove-all-cars-containing-illegal-goods,1,google
+679,Minimum Time to Revert Word to Initial State II,https://leetcode.com/problems/minimum-time-to-revert-word-to-initial-state-ii,1,sprinklr
+680,Minimum Total Cost to Make Arrays Unequal,https://leetcode.com/problems/minimum-total-cost-to-make-arrays-unequal,1,razorpay
+681,Minimum Weighted Subgraph With the Required Paths,https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths,1,google
+682,Minimum White Tiles After Covering With Carpets,https://leetcode.com/problems/minimum-white-tiles-after-covering-with-carpets,1,google
+683,Minimum XOR Sum of Two Arrays,https://leetcode.com/problems/minimum-xor-sum-of-two-arrays,1,medianet
+684,Modify Graph Edge Weights,https://leetcode.com/problems/modify-graph-edge-weights,1,google
+685,Move Sub-Tree of N-Ary Tree,https://leetcode.com/problems/move-sub-tree-of-n-ary-tree,1,google
+686,My Calendar III,https://leetcode.com/problems/my-calendar-iii,1,google
+687,Naming a Company,https://leetcode.com/problems/naming-a-company,1,google
+688,Next Palindrome Using Same Digits,https://leetcode.com/problems/next-palindrome-using-same-digits,1,amazon
+689,Next Special Palindrome Number,https://leetcode.com/problems/next-special-palindrome-number,1,google
+690,Number of Beautiful Integers in the Range,https://leetcode.com/problems/number-of-beautiful-integers-in-the-range,1,infosys
+691,Number of Beautiful Partitions,https://leetcode.com/problems/number-of-beautiful-partitions,1,google
+692,Number of Distinct Roll Sequences,https://leetcode.com/problems/number-of-distinct-roll-sequences,1,servicenow
+693,Number of Excellent Pairs,https://leetcode.com/problems/number-of-excellent-pairs,1,epifi
+694,Number of Stable Subsequences,https://leetcode.com/problems/number-of-stable-subsequences,1,google
+695,Number of Subarrays With AND Value of K,https://leetcode.com/problems/number-of-subarrays-with-and-value-of-k,1,de-shaw
+696,Number of Unique Good Subsequences,https://leetcode.com/problems/number-of-unique-good-subsequences,1,google
+697,Number of Valid Subarrays,https://leetcode.com/problems/number-of-valid-subarrays,1,hulu
+698,Number of Valid Words for Each Puzzle,https://leetcode.com/problems/number-of-valid-words-for-each-puzzle,1,dropbox
+699,Number of Ways of Cutting a Pizza,https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza,1,google
+700,Number of Ways to Earn Points,https://leetcode.com/problems/number-of-ways-to-earn-points,1,tusimple
+701,Number of Ways to Reach Destination in the Grid,https://leetcode.com/problems/number-of-ways-to-reach-destination-in-the-grid,1,uber
+702,Number of Ways to Rearrange Sticks With K Sticks Visible,https://leetcode.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible,1,google
+703,Number Of Ways To Reconstruct A Tree,https://leetcode.com/problems/number-of-ways-to-reconstruct-a-tree,1,uber
+704,Number of Ways to Stay in the Same Place After Some Steps,https://leetcode.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps,1,google
+705,Online Majority Element In Subarray,https://leetcode.com/problems/online-majority-element-in-subarray,1,nutanix
+706,Page Recommendations II,https://leetcode.com/problems/page-recommendations-ii,1,meta
+707,Palindrome Partitioning IV,https://leetcode.com/problems/palindrome-partitioning-iv,1,tcs
+708,Palindrome Removal,https://leetcode.com/problems/palindrome-removal,1,microsoft
+709,Partition Array for Maximum XOR and AND,https://leetcode.com/problems/partition-array-for-maximum-xor-and-and,1,google
+710,Path Existence Queries in a Graph II,https://leetcode.com/problems/path-existence-queries-in-a-graph-ii,1,google
+711,Peaks in Array,https://leetcode.com/problems/peaks-in-array,1,siemens
+712,Poor Pigs,https://leetcode.com/problems/poor-pigs,1,google
+713,Preimage Size of Factorial Zeroes Function,https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function,1,adobe
+714,Process String with Special Operations II,https://leetcode.com/problems/process-string-with-special-operations-ii,1,google
+715,Recover the Original Array,https://leetcode.com/problems/recover-the-original-array,1,google
+716,Redundant Connection II,https://leetcode.com/problems/redundant-connection-ii,1,google
+717,Remove 9,https://leetcode.com/problems/remove-9,1,houzz
+718,Sales by Day of the Week,https://leetcode.com/problems/sales-by-day-of-the-week,1,amazon
+719,Selling Pieces of Wood,https://leetcode.com/problems/selling-pieces-of-wood,1,palantir
+720,Sequentially Ordinal Rank Tracker,https://leetcode.com/problems/sequentially-ordinal-rank-tracker,1,amazon
+721,Shortest Impossible Sequence of Rolls,https://leetcode.com/problems/shortest-impossible-sequence-of-rolls,1,google
+722,Shortest Matching Substring,https://leetcode.com/problems/shortest-matching-substring,1,amazon
+723,Shortest Path in a Weighted Tree,https://leetcode.com/problems/shortest-path-in-a-weighted-tree,1,juspay
+724,Smallest K-Length Subsequence With Occurrences of a Letter,https://leetcode.com/problems/smallest-k-length-subsequence-with-occurrences-of-a-letter,1,deutsche-bank
+725,Smallest Rectangle Enclosing Black Pixels,https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels,1,google
+726,Smallest Substring With Identical Characters II,https://leetcode.com/problems/smallest-substring-with-identical-characters-ii,1,salesforce
+727,Smallest Sufficient Team,https://leetcode.com/problems/smallest-sufficient-team,1,tcs
+728,Sort Array by Moving Items to Empty Space,https://leetcode.com/problems/sort-array-by-moving-items-to-empty-space,1,google
+729,Sorted GCD Pair Queries,https://leetcode.com/problems/sorted-gcd-pair-queries,1,google
+730,Split Array with Equal Sum,https://leetcode.com/problems/split-array-with-equal-sum,1,alibaba
+731,Split the Array to Make Coprime Products,https://leetcode.com/problems/split-the-array-to-make-coprime-products,1,zomato
+732,Stamping the Grid,https://leetcode.com/problems/stamping-the-grid,1,rubrik
+733,Stamping The Sequence,https://leetcode.com/problems/stamping-the-sequence,1,morgan-stanley
+734,Stone Game IV,https://leetcode.com/problems/stone-game-iv,1,microsoft
+735,Stone Game V,https://leetcode.com/problems/stone-game-v,1,google
+736,Stone Game VIII,https://leetcode.com/problems/stone-game-viii,1,infosys
+737,Strange Printer II,https://leetcode.com/problems/strange-printer-ii,1,google
+738,String Transforms Into Another String,https://leetcode.com/problems/string-transforms-into-another-string,1,google
+739,Subarrays Distinct Element Sum of Squares II,https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii,1,amazon
+740,Subsequence With the Minimum Score,https://leetcode.com/problems/subsequence-with-the-minimum-score,1,doordash
+741,Substring With Largest Variance,https://leetcode.com/problems/substring-with-largest-variance,1,amazon
+742,Subtree Removal Game with Fibonacci Tree,https://leetcode.com/problems/subtree-removal-game-with-fibonacci-tree,1,sony
+743,Sum of Good Subsequences,https://leetcode.com/problems/sum-of-good-subsequences,1,google
+744,Sum of Imbalance Numbers of All Subarrays,https://leetcode.com/problems/sum-of-imbalance-numbers-of-all-subarrays,1,google
+745,Sum of Scores of Built Strings,https://leetcode.com/problems/sum-of-scores-of-built-strings,1,amazon
+746,Sum Of Special Evenly-Spaced Elements In Array,https://leetcode.com/problems/sum-of-special-evenly-spaced-elements-in-array,1,makemytrip
+747,Super Palindromes,https://leetcode.com/problems/super-palindromes,1,google
+748,The Maze III,https://leetcode.com/problems/the-maze-iii,1,google
+749,The Most Similar Path in a Graph,https://leetcode.com/problems/the-most-similar-path-in-a-graph,1,google
+750,Three Equal Parts,https://leetcode.com/problems/three-equal-parts,1,hotstar
+751,Time to Cross a Bridge,https://leetcode.com/problems/time-to-cross-a-bridge,1,linkedin
+752,Top Three Wineries,https://leetcode.com/problems/top-three-wineries,1,google
+753,Total Sum of Interaction Cost in Tree Groups,https://leetcode.com/problems/total-sum-of-interaction-cost-in-tree-groups,1,amazon
+754,Tournament Winners,https://leetcode.com/problems/tournament-winners,1,wayfair
+755,Tree of Coprimes,https://leetcode.com/problems/tree-of-coprimes,1,google
+756,User Purchase Platform,https://leetcode.com/problems/user-purchase-platform,1,linkedin
+757,Word Squares,https://leetcode.com/problems/word-squares,1,google
+758,Year on Year Growth Rate,https://leetcode.com/problems/year-on-year-growth-rate,1,amazon

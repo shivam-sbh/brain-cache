@@ -198,14 +198,6 @@ Premium's company question lists. Problems are deduplicated and sorted by how ma
 companies ask each. The recommender walks each list top-down, skipping problems already
 done.
 
-## Roadmap
-
-- [x] Daily DSA recommendation email
-- [ ] Resolve reviews directly from the email (tokenised pass/fail links)
-- [ ] Flyway migrations (replace Hibernate `ddl-auto`)
-- [ ] React gRPC-Web frontend (Envoy + nginx) for EC2
-- [ ] CI/CD + SSL
-
 ## License
 
 Released under the [MIT License](LICENSE).

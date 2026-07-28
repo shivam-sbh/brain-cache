@@ -1,5 +1,8 @@
 # Brain Cache
 
+<img width="291" height="125" alt="image" src="https://github.com/user-attachments/assets/41660439-c328-4dd6-a10a-ffd5c2e2260f" />
+
+
 > Spaced-repetition knowledge forge with a daily email nudge — built on Spring Boot + gRPC.
 
 Brain Cache is a personal memory engine. You capture the things you want to remember

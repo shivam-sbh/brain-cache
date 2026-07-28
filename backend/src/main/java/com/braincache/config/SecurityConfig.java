@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @EnableConfigurationProperties turns the typed config records into injectable beans.
  */
 @Configuration
-@EnableConfigurationProperties({JwtProperties.class, ReviewProperties.class, RecommendationProperties.class})
+@EnableConfigurationProperties({JwtProperties.class, ReviewProperties.class, RecommendationProperties.class, AppProperties.class})
 public class SecurityConfig {
 
     // One bcrypt encoder for the whole app. Inject wherever we hash/verify passwords.

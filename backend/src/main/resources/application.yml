@@ -41,6 +41,10 @@ grpc:
 
 # App-specific config namespace (bound to a @ConfigurationProperties bean later).
 braincache:
+  # Frontend base URL for the CTA button in outbound email. Blank in local/dev — the
+  # email jobs skip the button entirely when this isn't a valid http(s) URL. Set only
+  # in prod via APP_URL.
+  app-url: ${APP_URL:}
   jwt:
     secret: ${JWT_SECRET:dev-only-insecure-secret-change-me-min-32-bytes-long}
     ttl-hours: ${JWT_TTL_HOURS:168}   # 7 days

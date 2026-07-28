@@ -1,15 +1,16 @@
 package com.braincache.service;
 
 import com.braincache.config.ReviewProperties;
-import org.springframework.mail.SimpleMailMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 /**
  * Thin wrapper over Spring's JavaMailSender (auto-configured from spring.mail.*).
- * One job: send a plain-text email. Keeps the SMTP mechanics out of the scheduler.
- *
- * Go parallel: a small struct holding an *smtp.Client with a Send(to, subject, body).
+ * One job: send an already-built HTML document. Callers build the full document via
+ * EmailTemplate.wrap() themselves — this class just handles SMTP mechanics.
  */
 @Service
 public class EmailService {
@@ -22,12 +23,17 @@ public class EmailService {
         this.from = review.emailFrom();
     }
 
-    public void send(String to, String subject, String body) {
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom(from);
-        msg.setTo(to);
-        msg.setSubject(subject);
-        msg.setText(body);
-        mailSender.send(msg);
+    public void send(String to, String subject, String html) {
+        try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, "UTF-8");
+            helper.setFrom(from);
+            helper.setTo(to);
+            helper.setSubject(subject);
+            helper.setText(html, true);
+            mailSender.send(message);
+        } catch (MessagingException e) {
+            throw new IllegalStateException("Failed to build email to " + to, e);
+        }
     }
 }

@@ -427,13 +427,23 @@ function Dashboard({ email, onLogout }: { email: string | null; onLogout: () => 
 
 /* ── card ──────────────────────────────────────────────────────────────── */
 const CO_LIMIT = 8;
-function CardItem({ card, onReview }: { card: CardMsg; onReview: (c: CardMsg, p: boolean) => void }) {
+// Shared tile for both the recall queue and history: heading, learned body,
+// DSA meta. `metaChip` fills the slot next to the type chip (rung vs time);
+// `actions` is an optional footer (queue's Hit/Miss buttons).
+function CardTile({
+  card,
+  metaChip,
+  actions,
+}: {
+  card: CardMsg;
+  metaChip?: React.ReactNode;
+  actions?: React.ReactNode;
+}) {
   const isDsa = card.type === "DSA";
   const learned = isDsa ? card.comment : card.back;
   const extra = card.companies.length - CO_LIMIT;
   return (
     <div className="card">
-      {/* 1 — heading */}
       <div className="row between">
         <div className="title mono">
           {isDsa && card.url ? (
@@ -447,11 +457,10 @@ function CardItem({ card, onReview }: { card: CardMsg; onReview: (c: CardMsg, p:
         </div>
         <div className="row">
           <span className={`chip ${isDsa ? "accent" : ""}`}>{card.type}</span>
-          <span className="chip">rung {card.intervalIndex}</span>
+          {metaChip}
         </div>
       </div>
 
-      {/* 2 — what I learned */}
       {learned && (
         <div className="learned">
           <div className="learned-label">What I learned</div>
@@ -459,7 +468,6 @@ function CardItem({ card, onReview }: { card: CardMsg; onReview: (c: CardMsg, p:
         </div>
       )}
 
-      {/* 3 — DSA meta, always below */}
       {isDsa && (card.numCompanies > 0 || card.companies.length > 0) && (
         <div className="dsa-meta">
           {card.numCompanies > 0 && (
@@ -478,17 +486,29 @@ function CardItem({ card, onReview }: { card: CardMsg; onReview: (c: CardMsg, p:
         </div>
       )}
 
-      <div className="card-actions">
-        <button className="btn pass" onClick={() => onReview(card, true)} title="Recalled it">
-          <Check size={16} strokeWidth={2.6} />
-          Hit
-        </button>
-        <button className="btn fail" onClick={() => onReview(card, false)} title="Forgot it">
-          <X size={16} strokeWidth={2.6} />
-          Miss
-        </button>
-      </div>
+      {actions}
     </div>
+  );
+}
+
+function CardItem({ card, onReview }: { card: CardMsg; onReview: (c: CardMsg, p: boolean) => void }) {
+  return (
+    <CardTile
+      card={card}
+      metaChip={<span className="chip">rung {card.intervalIndex}</span>}
+      actions={
+        <div className="card-actions">
+          <button className="btn pass" onClick={() => onReview(card, true)} title="Recalled it">
+            <Check size={16} strokeWidth={2.6} />
+            Hit
+          </button>
+          <button className="btn fail" onClick={() => onReview(card, false)} title="Forgot it">
+            <X size={16} strokeWidth={2.6} />
+            Miss
+          </button>
+        </div>
+      }
+    />
   );
 }
 
@@ -529,58 +549,18 @@ function DayView({
 }
 
 function HistoryCard({ card }: { card: CardMsg }) {
-  const isDsa = card.type === "DSA";
-  const learned = isDsa ? card.comment : card.back;
-  const extra = card.companies.length - CO_LIMIT;
   return (
-    <div className="card">
-      <div className="row between">
-        <div className="title mono">
-          {isDsa && card.url ? (
-            <a href={card.url} target="_blank" rel="noreferrer">
-              {card.front}
-              <ExternalLink size={14} strokeWidth={2.2} />
-            </a>
-          ) : (
-            card.front
-          )}
-        </div>
-        <div className="row">
-          <span className={`chip ${isDsa ? "accent" : ""}`}>{card.type}</span>
-          {card.createdAt && (
-            <span className="chip">
-              <Clock size={12} strokeWidth={2.2} />
-              {timeOf(card.createdAt)}
-            </span>
-          )}
-        </div>
-      </div>
-
-      {learned && (
-        <div className="learned">
-          <div className="learned-label">What I learned</div>
-          <div className="learned-body mono">{learned}</div>
-        </div>
-      )}
-
-      {isDsa && (card.numCompanies > 0 || card.companies.length > 0) && (
-        <div className="dsa-meta">
-          {card.numCompanies > 0 && (
-            <div className="dsa-meta-label">Asked at {card.numCompanies} companies</div>
-          )}
-          {card.companies.length > 0 && (
-            <div className="companies">
-              {card.companies.slice(0, CO_LIMIT).map((co) => (
-                <span key={co} className="co">
-                  {co}
-                </span>
-              ))}
-              {extra > 0 && <span className="co more">+{extra} more</span>}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+    <CardTile
+      card={card}
+      metaChip={
+        card.createdAt && (
+          <span className="chip">
+            <Clock size={12} strokeWidth={2.2} />
+            {timeOf(card.createdAt)}
+          </span>
+        )
+      }
+    />
   );
 }
 
